@@ -6,6 +6,31 @@
   home.username = "sun";
   home.homeDirectory = "/home/sun";
 
+  # Packages that should be installed to the user profile.
+  home.packages = [
+    pkgs.awscli2
+    # pkgs.ssm-session-manager-plugin
+    # pkgs.aws-client-vpn
+    pkgs.bat
+    pkgs.bottom
+    pkgs.curl
+    pkgs.fd
+    pkgs.gopls
+    pkgs.jq
+    pkgs.nodePackages.typescript-language-server
+    pkgs.nodePackages.vls
+    pkgs.nodePackages.vscode-langservers-extracted
+    pkgs.nodePackages.yaml-language-server
+    pkgs.ripgrep
+    pkgs.rnix-lsp
+    pkgs.rustup
+    pkgs.rust-analyzer
+    pkgs.skim
+    pkgs.sumneko-lua-language-server
+    pkgs.unar
+    pkgs.zip
+  ];
+
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
