@@ -48,6 +48,7 @@
     enable = true;
     baseIndex = 1;
     escapeTime = 10;
+    keyMode = "vi";
     prefix = "'C-\\'";
     terminal = "screen-256color";
 
