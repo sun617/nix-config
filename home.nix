@@ -44,6 +44,12 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.git = {
+    enable = true;
+    userName = "Hongri Cui";
+    userEmail = "hongri.cui@gmail.com";
+  };
+
   programs.tmux = {
     enable = true;
     baseIndex = 1;
