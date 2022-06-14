@@ -117,6 +117,7 @@
     ];
   };
 
+  # https://git.sr.ht/~jshholland/nixos-configs/tree/master/home/sway.nix
   wayland.windowManager.sway = {
     enable = true;
     config = {
@@ -145,21 +146,23 @@
         in
         lib.mkOptionDefault {
           # take screenshot
-          "Control+Mod1+a" = "exec grim -g '$(slurp)' - | wl-copy --type image/png && wl-paste > $(xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')";
+          "Control+Mod1+a" = ''exec grim -g "$(slurp)" - | wl-copy --type image/png && wl-paste > $(xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')'';
           "Control+Mod1+s" = "exec grim -o $(swaymsg -t get_outputs | jq --raw-output '.[] | select(.focused) | .name') - | wl-copy --type image/png && wl-paste > $(xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')";
           # recording
           "Control+Mod1+r" = "exec wf-recorder -o $(swaymsg -t get_outputs | jq --raw-output '.[] | select(.focused) | .name') -c h264_vaapi -d /dev/dri/renderD128 -f $(xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')";
           "Control+Mod1+BackSpace" = "exec killall -s SIGINT wf-recorder";
           # lockscreen
           "Control+${modifier}+l" = "exec swaylock -eFki /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png";
+          # start your launcher
+          "${modifier}+Return" = "exec ${config.wayland.windowManager.sway.config.menu}";
           # Switch application
-          "${modifier}+a" = "[app_id='pavucontrol'] focus";
-          "${modifier}+c" = "[class='Google-chrome'] focus";
-          "${modifier}+d" = "[app_id='DBeaver'] focus";
-          "${modifier}+f" = "[app_id='firefox'] focus";
-          "${modifier}+p" = "[class='Postman'] focus";
-          "${modifier}+s" = "[class='Slack'] focus";
-          "${modifier}+t" = "[app_id='foot'] focus";
+          "${modifier}+a" = ''[app_id="pavucontrol"] focus'';
+          "${modifier}+c" = ''[class="Google-chrome"] focus'';
+          "${modifier}+d" = ''[app_id="DBeaver"] focus'';
+          "${modifier}+f" = ''[app_id="firefox"] focus'';
+          "${modifier}+p" = ''[class="Postman"] focus'';
+          "${modifier}+s" = ''[class="Slack"] focus'';
+          "${modifier}+t" = ''[app_id="foot"] focus'';
 
           "Control+${modifier}+a" = "focus parent";
           "Control+${modifier}+f" = "fullscreen";
