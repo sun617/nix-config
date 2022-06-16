@@ -7,6 +7,17 @@
 
   home.packages = with pkgs; [
     grim
+    light
+    playerctl
+    slurp
+    swayidle
+    swaylock
+    udiskie
+    wf-recorder
+    wl-clipboard
+    wofi
+    xdg-user-dirs
+    xdg-utils
   ];
 
   # https://git.sr.ht/~jshholland/nixos-configs/tree/master/home/sway.nix
@@ -38,13 +49,13 @@
         in
         lib.mkOptionDefault {
           # take screenshot
-          "Control+Mod1+a" = ''exec ${pkgs.grim}/bin/grim -g "$(slurp)" - | wl-copy --type image/png && wl-paste > $(xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')'';
-          "Control+Mod1+s" = "exec ${pkgs.grim}/bin/grim -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') - | wl-copy --type image/png && wl-paste > $(xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')";
+          "Control+Mod1+a" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')'';
+          "Control+Mod1+s" = "exec ${pkgs.grim}/bin/grim -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')";
           # recording
-          "Control+Mod1+r" = "exec wf-recorder -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') -c h264_vaapi -d /dev/dri/renderD128 -f $(xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')";
+          "Control+Mod1+r" = "exec ${pkgs.wf-recorder}/bin/wf-recorder -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') -c h264_vaapi -d /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')";
           "Control+Mod1+BackSpace" = "exec killall -s SIGINT wf-recorder";
           # lockscreen
-          "Control+${modifier}+l" = "exec swaylock -eFki /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png";
+          "Control+${modifier}+l" = "exec ${pkgs.swaylock}/bin/swaylock -eFki /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png";
           # start your launcher
           "${modifier}+Return" = "exec ${config.wayland.windowManager.sway.config.menu}";
           # Switch application
@@ -73,19 +84,19 @@
           "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume 0 +5%";
           "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume 0 -5%";
           "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute 0 toggle";
-          "XF86MonBrightnessDown" = "exec --no-startup-id light -U 10";
-          "XF86MonBrightnessUp" = "exec --no-startup-id light -A 10";
+          "XF86MonBrightnessDown" = "exec --no-startup-id ${pkgs.light}/bin/light -U 10";
+          "XF86MonBrightnessUp" = "exec --no-startup-id ${pkgs.light}/bin/light -A 10";
           "XF86Sleep" = "exec systemctl suspend";
-          "XF86AudioPlay" = "exec playerctl play-pause";
-          "XF86AudioStop" = "exec playerctl stop";
-          "XF86AudioPrev" = "exec playerctl previous";
-          "XF86AudioNext" = "exec playerctl next";
+          "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+          "XF86AudioStop" = "exec ${pkgs.playerctl}/bin/playerctl stop";
+          "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+          "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
         };
-      menu = "wofi --insensitive --show drun";
+      menu = "${pkgs.wofi}/bin/wofi --insensitive --show drun";
       modifier = "Mod4";
       output = { "*".bg = "/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill"; };
       startup = [
-        { command = "udiskie --tray"; }
+        { command = "${pkgs.udiskie}/bin/udiskie --tray"; }
         { command = "fcitx5 -d"; }
         { command = "mako"; }
         { command = "swayrd"; }
@@ -93,8 +104,8 @@
         { command = "pkill kanshi; exec kanshi"; always = true; }
         {
           command = ''
-            swayidle -w \
-                    timeout 900  "swaylock -efFki /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" \
+            ${pkgs.swayidle}/bin/swayidle -w \
+                    timeout 900  "${pkgs.swaylock}/bin/swaylock -efFki /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" \
                     timeout 1800  "swaymsg 'output * dpms off'" \
                           resume "swaymsg 'output * dpms on'" \
                     timeout 7200 "systemctl suspend"
