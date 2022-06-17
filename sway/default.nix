@@ -3,6 +3,7 @@
 {
   imports = [
     ./i3status-rust.nix
+    ./mako.nix
   ];
 
   home.packages = with pkgs; [
@@ -11,7 +12,7 @@
     playerctl
     slurp
     swayidle
-    swaylock
+    # swaylock
     udiskie
     wf-recorder
     wl-clipboard
@@ -55,7 +56,7 @@
           "Control+Mod1+r" = "exec ${pkgs.wf-recorder}/bin/wf-recorder -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') -c h264_vaapi -d /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')";
           "Control+Mod1+BackSpace" = "exec killall -s SIGINT wf-recorder";
           # lockscreen
-          "Control+${modifier}+l" = "exec ${pkgs.swaylock}/bin/swaylock -eFki /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png";
+          "Control+${modifier}+l" = "exec swaylock -eFki /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png";
           # start your launcher
           "${modifier}+Return" = "exec ${config.wayland.windowManager.sway.config.menu}";
           # Switch application
@@ -98,14 +99,14 @@
       startup = [
         { command = "${pkgs.udiskie}/bin/udiskie --tray"; }
         { command = "fcitx5 -d"; }
-        { command = "mako"; }
+        { command = "${pkgs.mako}/bin/mako"; }
         { command = "swayrd"; }
         { command = "foot --server"; }
         { command = "pkill kanshi; exec kanshi"; always = true; }
         {
           command = ''
             ${pkgs.swayidle}/bin/swayidle -w \
-                    timeout 900  "${pkgs.swaylock}/bin/swaylock -efFki /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" \
+                    timeout 900  "swaylock -efFki /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" \
                     timeout 1800  "swaymsg 'output * dpms off'" \
                           resume "swaymsg 'output * dpms on'" \
                     timeout 7200 "systemctl suspend"
