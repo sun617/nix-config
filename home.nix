@@ -3,6 +3,7 @@
 {
   imports = [
     ./git.nix
+    ./neovim
     ./sway
     ./tmux.nix
   ];
@@ -20,18 +21,10 @@
     bottom
     curl
     fd
-    gopls
     jq
-    nodePackages.typescript-language-server
-    nodePackages.vls
-    nodePackages.vscode-langservers-extracted
-    nodePackages.yaml-language-server
     ripgrep
-    rnix-lsp
     rustup
-    rust-analyzer
     skim
-    sumneko-lua-language-server
     unar
     zip
   ];

@@ -100,7 +100,7 @@
         { command = "${pkgs.udiskie}/bin/udiskie --tray"; }
         { command = "fcitx5 -d"; }
         { command = "${pkgs.mako}/bin/mako"; }
-        { command = "swayrd"; }
+        # { command = "swayrd"; }
         { command = "foot --server"; }
         { command = "pkill kanshi; exec kanshi"; always = true; }
         {
