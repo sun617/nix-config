@@ -12,12 +12,23 @@
 
   outputs = { home-manager, ... }:
     let
+      inherit (nixpkgs.lib) nixosSystem;
       inherit (home-manager.lib) homeManagerConfiguration;
 
       system = "x86_64-linux";
       username = "sun";
     in
     {
+      nixosConfigurations = {
+        x1c6 = nixosSystem {
+          inherit system;
+
+          modules = [
+            ./nixos/configuration.nix
+          ];
+        };
+      };
+
       homeConfigurations = {
         ${username} = homeManagerConfiguration {
           inherit system username;
