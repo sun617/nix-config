@@ -59,7 +59,7 @@
         plugin = nvim-web-devicons;
         optional = true;
       }
-      
+
       # nvim-tree
       {
         type = "lua";
@@ -110,7 +110,7 @@
       {
         type = "lua";
         plugin = nvim-autopairs;
-        config = builtins.readFile ./configs/nightfox-nvim.lua;
+        config = builtins.readFile ./configs/nvim-autopairs.lua;
       }
 
       # surround
