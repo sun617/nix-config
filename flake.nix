@@ -1,32 +1,31 @@
 {
-  description = "Home Manager configuration of sun";
+  description = "My NixOS configuration";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs
-    home-manager.url = "github:nix-community/home-manager";
+    # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Home manager
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { home-manager, ... }:
     let
+      inherit (home-manager.lib) homeManagerConfiguration;
+
       system = "x86_64-linux";
       username = "sun";
     in
     {
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        # Specify the path to your home configuration here
-        configuration = import ./home.nix;
+      homeConfigurations = {
+        ${username} = homeManagerConfiguration {
+          inherit system username;
+          homeDirectory = "/home/${username}";
 
-        inherit system username;
-        homeDirectory = "/home/${username}";
-        # Update the state version as needed.
-        # See the changelog here:
-        # https://nix-community.github.io/home-manager/release-notes.html#sec-release-21.05
-        stateVersion = "22.05";
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+          configuration = import ./home-manager/home.nix;
+          stateVersion = "22.05";
+        };
       };
     };
 }
