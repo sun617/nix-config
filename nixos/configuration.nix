@@ -26,6 +26,12 @@
     '';
   };
 
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+  };
+
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 

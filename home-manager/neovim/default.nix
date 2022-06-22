@@ -3,6 +3,7 @@
 {
   programs.neovim = {
     enable = true;
+    viAlias = true;
     extraConfig = "lua << EOF\n${builtins.readFile ./configs/init.lua}\nEOF";
     extraPackages = with pkgs; [
       gopls

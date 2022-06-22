@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./fcitx5.nix
+    ./foot.nix
     ./i3status-rust.nix
     ./mako.nix
   ];
@@ -24,6 +26,7 @@
   # https://git.sr.ht/~jshholland/nixos-configs/tree/master/home/sway.nix
   wayland.windowManager.sway = {
     enable = true;
+    systemdIntegration = true;
     config = {
       bars = [{
         fonts = {
@@ -98,10 +101,8 @@
       output = { "*".bg = "/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill"; };
       startup = [
         { command = "udiskie --tray"; }
-        { command = "fcitx5 -d"; }
         { command = "${pkgs.mako}/bin/mako"; }
         # { command = "swayrd"; }
-        { command = "foot --server"; }
         { command = "pkill kanshi; exec kanshi"; always = true; }
         {
           command = ''
