@@ -20,6 +20,12 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
+  nix = {
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";
 
@@ -61,6 +67,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sun = {
     isNormalUser = true;
+    shell = pkgs.fish;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     #   packages = with pkgs; [
     #     firefox
@@ -71,8 +78,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    home-manager
     git
-    vim
+    neovim
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
