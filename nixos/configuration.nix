@@ -96,6 +96,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+  programs.sway.enable = true;
 
   # List services that you want to enable:
 
