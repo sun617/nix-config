@@ -3,9 +3,12 @@
 {
   imports = [
     ./fcitx5.nix
+    ./fonts.nix
     ./foot.nix
     ./i3status-rust.nix
+    ./kanshi.nix
     ./mako.nix
+    ./udiskie.nix
   ];
 
   home.packages = with pkgs; [
@@ -98,10 +101,8 @@
       modifier = "Mod4";
       output = { "*".bg = "${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill"; };
       startup = [
-        { command = "udiskie --tray"; }
         { command = "${pkgs.mako}/bin/mako"; }
         # { command = "swayrd"; }
-        { command = "pkill kanshi; exec kanshi"; always = true; }
         {
           command = ''
             ${pkgs.swayidle}/bin/swayidle -w \
