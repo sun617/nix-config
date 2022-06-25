@@ -75,7 +75,10 @@
   users.users.sun = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "docker"
+      "wheel" # Enable ‘sudo’ for the user.
+    ];
     #   packages = with pkgs; [
     #     firefox
     #     thunderbird
@@ -109,6 +112,8 @@
   #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   #   wlr.enable = true;
   # };
+
+  virtualisation.docker.enable = true;
 
 
   # Open ports in the firewall.

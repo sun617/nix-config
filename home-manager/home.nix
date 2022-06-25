@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./docker-compose.nix
     ./fish
     ./git.nix
     ./neovim

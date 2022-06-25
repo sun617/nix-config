@@ -8,6 +8,13 @@
   programs.fish = {
     enable = true;
     shellAbbrs = {
+      # docker
+      d = "docker";
+      da = "docker attach";
+      dC = "docker container";
+      di = "docker image";
+      dv = "docker volume";
+      dr = "docker run --rm -it";
       # home-manager
       h = "home-manager";
       hs = "home-manager switch --flake .";
