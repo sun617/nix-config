@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./fish
     ./git.nix
     ./neovim
     ./sway
@@ -12,6 +13,7 @@
   home.username = "sun";
   home.homeDirectory = "/home/sun";
 
+  # nixpkgs.config.allowUnfree = true;
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     awscli2
