@@ -15,6 +15,16 @@
       di = "docker image";
       dv = "docker volume";
       dr = "docker run --rm -it";
+      # flatpak
+      f = "flatpak";
+      fi = "flatpak info";
+      fip = "flatpak info --show-permissions";
+      fI = "flatpak install flathub";
+      fl = "flatpak list";
+      fo = "flatpak override";
+      fs = "flatpak search";
+      fu = "flatpak update";
+      fU = "flatpak uninstall";
       # home-manager
       h = "home-manager";
       hs = "home-manager switch --flake .";

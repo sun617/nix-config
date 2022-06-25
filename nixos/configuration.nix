@@ -106,12 +106,12 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  # services.flatpak.enable = true;
-  # xdg.portal = {
-  #   enable = true;
-  #   extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  #   wlr.enable = true;
-  # };
+  services.flatpak.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    wlr.enable = true;
+  };
 
   virtualisation.docker.enable = true;
 
