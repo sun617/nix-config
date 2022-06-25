@@ -5,6 +5,8 @@
     userEmail = "hongri.cui@gmail.com";
   };
 
+  programs.gh.enable = true;
+
   programs.fish.shellAbbrs = {
     ga = "git add";
     gb = "bit branch";
