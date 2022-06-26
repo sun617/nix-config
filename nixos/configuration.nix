@@ -77,6 +77,7 @@
     shell = pkgs.fish;
     extraGroups = [
       "docker"
+      "networkmanager"
       "wheel" # Enable ‘sudo’ for the user.
     ];
     #   packages = with pkgs; [

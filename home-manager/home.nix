@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./aws.nix
     ./docker-compose.nix
     ./fish
     ./git.nix
@@ -18,9 +19,6 @@
   nixpkgs.config.allowUnfreePredicate = (_: true);
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    awscli2
-    ssm-session-manager-plugin
-    # aws-client-vpn
     bat
     bottom
     curl
