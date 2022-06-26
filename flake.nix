@@ -16,7 +16,7 @@
       inherit (home-manager.lib) homeManagerConfiguration;
 
       system = "x86_64-linux";
-      username = "sun";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       nixosConfigurations = {
@@ -30,12 +30,11 @@
       };
 
       homeConfigurations = {
-        ${username} = homeManagerConfiguration {
-          inherit system username;
-          homeDirectory = "/home/${username}";
-
-          configuration = import ./home-manager/home.nix;
-          stateVersion = "22.05";
+        sun = homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./home-manager/home.nix
+          ];
         };
       };
     };
