@@ -25,9 +25,19 @@
     xdg-utils
   ];
 
+  programs.fish.loginShellInit = ''
+    if test (tty) = /dev/tty1
+      exec sway > ~/sway.log 2>&1
+    end
+  '';
+
   # https://git.sr.ht/~jshholland/nixos-configs/tree/master/home/sway.nix
   wayland.windowManager.sway = {
     enable = true;
+    extraSessionCommands = ''
+      # firefox
+      export MOZ_ENABLE_WAYLAND=1
+    '';
     config = {
       bars = [{
         fonts = {
@@ -138,7 +148,7 @@
           }
           {
             command = "floating enable";
-            criteria.class = "fcitx5-config-qt";
+            criteria.app_id = "org.fcitx.";
           }
           {
             command = "floating enable";
