@@ -14,11 +14,12 @@
   home.username = "sun";
   home.homeDirectory = "/home/sun";
 
-  # nixpkgs.config.allowUnfree = true;
+  # https://github.com/nix-community/home-manager/issues/2942
+  nixpkgs.config.allowUnfreePredicate = (_: true);
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     awscli2
-    # ssm-session-manager-plugin
+    ssm-session-manager-plugin
     # aws-client-vpn
     bat
     bottom
