@@ -37,7 +37,7 @@
             block = "time";
           }
         ];
-        icons = "awesome5";
+        icons = "awesome6";
         theme = "solarized-dark";
       };
     };
