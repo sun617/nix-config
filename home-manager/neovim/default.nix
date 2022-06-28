@@ -28,7 +28,7 @@
         config = builtins.readFile ./configs/nvim-cmp.lua;
       }
       cmp-nvim-lsp
-      # cmp-nvim-lsp-signature-help
+      cmp-nvim-lsp-signature-help
       cmp-buffer
       {
         type = "lua";
