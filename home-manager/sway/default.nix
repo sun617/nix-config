@@ -8,6 +8,7 @@
     ./i3status-rust.nix
     ./kanshi.nix
     ./mako.nix
+    ./mpv.nix
     ./udiskie.nix
     ./xdg.nix
   ];
