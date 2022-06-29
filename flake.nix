@@ -37,5 +37,11 @@
           ];
         };
       };
+
+      devShells.${system}.default = with pkgs; mkShell {
+        packages = [
+          home-manager
+        ];
+      };
     };
 }
