@@ -9,6 +9,7 @@
     ./kanshi.nix
     ./mako.nix
     ./udiskie.nix
+    ./xdg.nix
   ];
 
   home.packages = with pkgs; [
@@ -17,12 +18,9 @@
     playerctl
     slurp
     swayidle
-    # udiskie
     # wf-recorder
     wl-clipboard
     wofi
-    xdg-user-dirs
-    xdg-utils
   ];
 
   programs.fish.loginShellInit = ''
