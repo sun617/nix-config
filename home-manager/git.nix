@@ -3,6 +3,9 @@
     enable = true;
     userName = "Hongri Cui";
     userEmail = "hongri.cui@gmail.com";
+    extraConfig = {
+      pull.rebase = false;
+    };
   };
 
   programs.gh.enable = true;
