@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "awsvpnclient": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1650433861,
+        "narHash": "sha256-Pnw59wD6KRi0lwumzD1qs3S8yjldMCWjRZXWXU905rs=",
+        "owner": "ymatsiuk",
+        "repo": "awsvpnclient",
+        "rev": "52d52fcbebdc15191c86df15cd12434e900e52ae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ymatsiuk",
+        "repo": "awsvpnclient",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -90,6 +110,7 @@
     },
     "root": {
       "inputs": {
+        "awsvpnclient": "awsvpnclient",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }

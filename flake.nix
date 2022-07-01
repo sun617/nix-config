@@ -8,9 +8,13 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Aws vpn client
+    awsvpnclient.url = "github:ymatsiuk/awsvpnclient";
+    awsvpnclient.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, awsvpnclient, ... }:
     let
       inherit (nixpkgs.lib) nixosSystem;
       inherit (home-manager.lib) homeManagerConfiguration;
@@ -34,6 +38,11 @@
           inherit pkgs;
           modules = [
             ./home-manager/home.nix
+            {
+              nixpkgs.overlays = [
+                awsvpnclient.overlay
+              ];
+            }
           ];
         };
       };
