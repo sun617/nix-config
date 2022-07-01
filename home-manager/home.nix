@@ -25,7 +25,6 @@
     fd
     jq
     ripgrep
-    rustup
     skim
     unar
     zip
