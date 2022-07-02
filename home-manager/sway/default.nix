@@ -2,28 +2,43 @@
 
 {
   imports = [
+    ./fcitx5.nix
+    ./fonts.nix
+    ./foot.nix
     ./i3status-rust.nix
+    ./kanshi.nix
     ./mako.nix
+    ./mpv.nix
+    ./udiskie.nix
+    ./xdg.nix
   ];
 
   home.packages = with pkgs; [
     grim
+    imv
+    killall
     light
     playerctl
     slurp
     swayidle
-    # swaylock
-    # udiskie
-    # wf-recorder
+    wf-recorder
     wl-clipboard
     wofi
-    xdg-user-dirs
-    xdg-utils
   ];
+
+  programs.fish.loginShellInit = ''
+    if test (tty) = /dev/tty1
+      exec sway > ~/sway.log 2>&1
+    end
+  '';
 
   # https://git.sr.ht/~jshholland/nixos-configs/tree/master/home/sway.nix
   wayland.windowManager.sway = {
     enable = true;
+    extraSessionCommands = ''
+      # firefox
+      export MOZ_ENABLE_WAYLAND=1
+    '';
     config = {
       bars = [{
         fonts = {
@@ -53,10 +68,10 @@
           "Control+Mod1+a" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')'';
           "Control+Mod1+s" = "exec ${pkgs.grim}/bin/grim -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')";
           # recording
-          "Control+Mod1+r" = "exec wf-recorder -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') -c h264_vaapi -d /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')";
-          "Control+Mod1+BackSpace" = "exec killall -s SIGINT wf-recorder";
+          "Control+Mod1+r" = "exec ${pkgs.wf-recorder}/bin/wf-recorder -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') -c h264_vaapi -d /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')";
+          "Control+Mod1+BackSpace" = "exec ${pkgs.killall}/bin/killall -s SIGINT wf-recorder";
           # lockscreen
-          "Control+${modifier}+l" = "exec swaylock -eFki /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png";
+          "Control+${modifier}+l" = "exec ${pkgs.swaylock}/bin/swaylock -eFki ${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png";
           # start your launcher
           "${modifier}+Return" = "exec ${config.wayland.windowManager.sway.config.menu}";
           # Switch application
@@ -95,18 +110,14 @@
         };
       menu = "${pkgs.wofi}/bin/wofi --insensitive --show drun";
       modifier = "Mod4";
-      output = { "*".bg = "/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill"; };
+      output = { "*".bg = "${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill"; };
       startup = [
-        { command = "udiskie --tray"; }
-        { command = "fcitx5 -d"; }
         { command = "${pkgs.mako}/bin/mako"; }
         # { command = "swayrd"; }
-        { command = "foot --server"; }
-        { command = "pkill kanshi; exec kanshi"; always = true; }
         {
           command = ''
             ${pkgs.swayidle}/bin/swayidle -w \
-                    timeout 900  "swaylock -efFki /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" \
+                    timeout 900  "${pkgs.swaylock}/bin/swaylock -efFki ${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png" \
                     timeout 1800  "swaymsg 'output * dpms off'" \
                           resume "swaymsg 'output * dpms on'" \
                     timeout 7200 "systemctl suspend"
@@ -138,7 +149,7 @@
           }
           {
             command = "floating enable";
-            criteria.class = "fcitx5-config-qt";
+            criteria.app_id = "org.fcitx.";
           }
           {
             command = "floating enable";

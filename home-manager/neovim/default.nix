@@ -3,6 +3,7 @@
 {
   programs.neovim = {
     enable = true;
+    viAlias = true;
     extraConfig = "lua << EOF\n${builtins.readFile ./configs/init.lua}\nEOF";
     extraPackages = with pkgs; [
       gopls
@@ -27,7 +28,7 @@
         config = builtins.readFile ./configs/nvim-cmp.lua;
       }
       cmp-nvim-lsp
-      # cmp-nvim-lsp-signature-help
+      cmp-nvim-lsp-signature-help
       cmp-buffer
       {
         type = "lua";
