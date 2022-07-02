@@ -24,7 +24,7 @@
     in
     {
       nixosConfigurations = {
-        x1c6 = nixosSystem {
+        x1c9 = nixosSystem {
           inherit system;
 
           modules = [
