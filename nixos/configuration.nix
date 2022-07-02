@@ -15,7 +15,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "x1c6"; # Define your hostname.
+  networking.hostName = "x1c9"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
@@ -24,12 +24,6 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-  };
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
   };
 
   # Set your time zone.
@@ -112,9 +106,16 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  services.flatpak.enable = true;
+  services = {
+    flatpak.enable = true;
+    logind.lidSwitchDocked = "suspend";
+    openssh.enable = true;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+    };
+  };
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
