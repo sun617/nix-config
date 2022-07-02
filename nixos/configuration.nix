@@ -88,10 +88,9 @@
       "networkmanager"
       "wheel" # Enable ‘sudo’ for the user.
     ];
-    #   packages = with pkgs; [
-    #     firefox
-    #     thunderbird
-    #   ];
+    packages = with pkgs; [
+      git
+    ];
   };
 
   # List packages installed in system profile. To search, run:
