@@ -4,6 +4,7 @@
   home.packages = [ pkgs.docker-compose ];
   programs.fish.shellAbbrs = {
     dc = "docker compose";
+    dcb = "docker compose build";
     dcd = "docker compose down";
     dce = "docker compose exec";
     dcl = "docker compose logs";

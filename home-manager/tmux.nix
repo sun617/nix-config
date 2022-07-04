@@ -19,7 +19,7 @@
 
       # source config
       # bind s source-file ~/.tmux.conf
-      source-file -q ~/.local/share/nvim/site/pack/packer/start/nightfox.nvim/extra/nightfox/nightfox_tmux.tmux
+      source-file -q ${pkgs.vimPlugins.nightfox-nvim}/extra/nightfox/nightfox_tmux.tmux
 
       # server
       bind-key q confirm-before -p "kill-server? (y/n)" kill-server

@@ -12,7 +12,7 @@
 
   programs.fish.shellAbbrs = {
     ga = "git add";
-    gb = "bit branch";
+    gb = "git branch";
     gcf = "git config";
     gc = "git checkout";
     gcl = "git clone";
