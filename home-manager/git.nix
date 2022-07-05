@@ -26,8 +26,10 @@
     gp = "git push";
     grb = "git rebase";
     grm = "git remote";
+    grma = "git remote add upstream";
     grs = "git reset";
-    gra = "git remote add upstream";
+    grt = "git restore";
+    grv = "git revert";
     gs = "git status";
     gsp = "git stash push";
     gsP = "git stash pop";

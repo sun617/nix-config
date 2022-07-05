@@ -49,8 +49,15 @@
         statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-top.toml";
       }];
       input = {
-        "type:keyboard" = {
+        # https://major.io/2022/05/24/sway-reload-causes-a-firefox-crash/
+        # "type:keyboard" = {
+        #   xkb_options = "caps:escape,altwin:prtsc_rwin";
+        # };
+        "1:1:AT_Translated_Set_2_keyboard" = {
           xkb_options = "caps:escape,altwin:prtsc_rwin";
+        };
+        "1452:272:Bluetooth_Keyboard" = {
+          xkb_options = "caps:escape";
         };
         "type:touchpad" = {
           dwt = "enabled";

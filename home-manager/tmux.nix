@@ -48,10 +48,10 @@
       bind-key -T root M-9 select-window -t :=9
 
       # pane
-      bind-key -T root M-h if-shell "[[ 'nvim' == $(tmux display-message -p '#{pane_current_command}') ]]" "send-keys M-h" "select-pane -L"
-      bind-key -T root M-j if-shell "[[ 'nvim' == $(tmux display-message -p '#{pane_current_command}') ]]" "send-keys M-j" "select-pane -D"
-      bind-key -T root M-k if-shell "[[ 'nvim' == $(tmux display-message -p '#{pane_current_command}') ]]" "send-keys M-k" "select-pane -U"
-      bind-key -T root M-l if-shell "[[ 'nvim' == $(tmux display-message -p '#{pane_current_command}') ]]" "send-keys M-l" "select-pane -R"
+      bind-key -T root M-h if-shell "[[ 'vi' == $(tmux display-message -p '#{pane_current_command}') ]]" "send-keys M-h" "select-pane -L"
+      bind-key -T root M-j if-shell "[[ 'vi' == $(tmux display-message -p '#{pane_current_command}') ]]" "send-keys M-j" "select-pane -D"
+      bind-key -T root M-k if-shell "[[ 'vi' == $(tmux display-message -p '#{pane_current_command}') ]]" "send-keys M-k" "select-pane -U"
+      bind-key -T root M-l if-shell "[[ 'vi' == $(tmux display-message -p '#{pane_current_command}') ]]" "send-keys M-l" "select-pane -R"
       bind-key -T root M-s split-window -v -c "#{pane_current_path}"
       bind-key -T root M-v split-window -h -c "#{pane_current_path}"
       bind-key -T root M-z resize-pane -Z
