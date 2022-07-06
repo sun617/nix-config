@@ -1,5 +1,29 @@
+-- reference
 -- https://github.com/go-delve/delve/issues/2328
 -- https://github.com/golang/vscode-go/blob/master/docs/debugging.md#connecting-to-headless-delve-with-target-specified-at-server-start-up
+--
+-- example
+-- .vscode/launch.json
+-- {
+--   "version": "0.2.0",
+--   "configurations": [
+--     {
+--       "name": "Connect to external session",
+--       "type": "go",
+--       "debugAdapter": "dlv-dap",
+--       "request": "attach",
+--       "mode": "remote",
+--       "port": 2345,
+--       "substitutePath": [
+--         {
+--           "from": "${workspaceFolder}/backend",
+--           "to": "/go/src/project-source"
+--         }
+--       ]
+--     }
+--   ]
+-- }
+
 require('dap.ext.vscode').load_launchjs()
 -- mapping
 vim.keymap.set('n', '<F8>', function() return require('dap').continue() end, { silent = true })
