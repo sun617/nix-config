@@ -14,6 +14,7 @@
   ];
 
   home.packages = with pkgs; [
+    gnome.adwaita-icon-theme
     grim
     imv
     killall
