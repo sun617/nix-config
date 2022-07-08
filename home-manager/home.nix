@@ -12,6 +12,7 @@
     ./docker-compose.nix
     ./fish
     ./git.nix
+    ./helix.nix
     ./neovim
     ./sway
     ./tmux.nix
@@ -22,6 +23,7 @@
   home.packages = with pkgs; [
     bat
     bottom
+    cachix
     curl
     fd
     jq

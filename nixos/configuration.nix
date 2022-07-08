@@ -24,6 +24,7 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
+    trustedUsers = [ "root" "sun" ];
   };
 
   # Set your time zone.
