@@ -103,7 +103,10 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  programs.sway.enable = true;
+  programs = {
+    ssh.startAgent = true;
+    sway.enable = true;
+  };
 
   # List services that you want to enable:
 
