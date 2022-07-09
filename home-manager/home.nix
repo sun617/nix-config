@@ -9,6 +9,7 @@
 
   imports = [
     ./aws.nix
+    ./broot.nix
     ./docker-compose.nix
     ./fish
     ./git.nix
