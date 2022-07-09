@@ -13,6 +13,7 @@
     ./fish
     ./git.nix
     ./helix.nix
+    ./lsp-servers.nix
     ./neovim
     ./sway
     ./tmux.nix

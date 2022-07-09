@@ -5,16 +5,6 @@
     enable = true;
     viAlias = true;
     extraConfig = "lua << EOF\n${builtins.readFile ./configs/init.lua}\nEOF";
-    extraPackages = with pkgs; [
-      gopls
-      nodePackages.typescript-language-server
-      nodePackages.vls
-      nodePackages.vscode-langservers-extracted
-      nodePackages.yaml-language-server
-      rnix-lsp
-      rust-analyzer
-      sumneko-lua-language-server
-    ];
     plugins = with pkgs.vimPlugins; [
       # lsp
       {
