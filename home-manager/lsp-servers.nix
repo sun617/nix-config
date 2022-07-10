@@ -3,8 +3,8 @@
 {
   home.packages = with pkgs; [
     gopls
+    nodePackages.typescript
     nodePackages.typescript-language-server
-    nodePackages.vls
     nodePackages.vscode-langservers-extracted
     nodePackages.yaml-language-server
     rnix-lsp
