@@ -12,17 +12,13 @@
     # helix
     helix.url = "github:helix-editor/helix";
     helix.inputs.nixpkgs.follows = "nixpkgs";
-    
-    # zellij
-    zellij.url = "github:zellij-org/zellij";
-    zellij.inputs.nixpkgs.follows = "nixpkgs";
 
     # Aws vpn client
     awsvpnclient.url = "github:ymatsiuk/awsvpnclient";
     awsvpnclient.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, helix, zellij, awsvpnclient, ... }:
+  outputs = { nixpkgs, home-manager, helix, awsvpnclient, ... }:
     let
       inherit (nixpkgs.lib) nixosSystem;
       inherit (home-manager.lib) homeManagerConfiguration;
@@ -54,7 +50,6 @@
               nixpkgs.overlays = [
                 awsvpnclient.overlay
                 helix-overlay
-                zellij.overlays.default
               ];
             }
           ];
