@@ -15,6 +15,10 @@
     };
     languages = [
       {
+        name = "nix";
+        auto-format = true;
+      }
+      {
         name = "vue";
         language-server = {
           command = "npx";
@@ -29,7 +33,7 @@
           documentFeatures = {
             documentColor = false;
             documentFormatting = {
-             defaultPrintWidth = 100;
+              defaultPrintWidth = 100;
             };
             documentSymbol = true;
             foldingRange = true;
@@ -41,8 +45,8 @@
             codeAction = true;
             codeLens = true;
             completion = {
-             defaultAttrNameCase = "kebabCase";
-             defaultTagNameCase = "both";
+              defaultAttrNameCase = "kebabCase";
+              defaultTagNameCase = "both";
             };
             definition = true;
             diagnostics = true;
@@ -63,6 +67,6 @@
           };
         };
       }
-    ];  
+    ];
   };
 }
