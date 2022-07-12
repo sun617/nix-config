@@ -69,7 +69,6 @@ local servers = {
   'sumneko_lua',
   'tsserver',
   'volar',
-  'vuels',
   'yamlls',
 }
 for _, lsp in pairs(servers) do
@@ -80,6 +79,14 @@ for _, lsp in pairs(servers) do
       client.resolved_capabilities.document_formatting = true
       on_attach(client, bufnr)
     end
+  elseif lsp == 'volar' then
+    lspconfig_opts.cmd = {'npx', '--package', '@volar/vue-language-server', 'vue-language-server', '--stdio'}
+    lspconfig_opts.filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+    lspconfig_opts.init_options = {
+      typescript = {
+        serverPath = "/home/sun/.nix-profile/lib/node_modules/typescript/lib/tsserverlibrary.js"
+      }
+    }
   elseif lsp == 'tsserver' then
     lspconfig_opts.on_attach = function(client, bufnr)
       on_attach(client, bufnr)
