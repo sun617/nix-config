@@ -24,7 +24,6 @@
   home.packages = with pkgs; [
     bat
     bottom
-    cachix
     curl
     fd
     jq
