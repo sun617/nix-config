@@ -5,8 +5,15 @@
     enable = true;
     settings = {
       theme = "solarized_dark";
-      editor.indent-guides = {
-        render = true;
+      editor = {
+        cursor-shape = {
+          insert = "bar";
+          select = "underline";
+        };
+        idle-timeout = 0;
+        indent-guides = {
+          render = true;
+        };
       };
       keys.normal = {
         space.w = ":w";
