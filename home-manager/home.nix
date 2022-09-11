@@ -25,7 +25,10 @@
     bat
     bottom
     curl
+    du-dust
     fd
+    gcc
+    gnumake
     jq
     ripgrep
     skim

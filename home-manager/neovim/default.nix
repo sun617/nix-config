@@ -4,7 +4,7 @@
   programs.neovim = {
     enable = true;
     viAlias = true;
-    extraConfig = "lua << EOF\n${builtins.readFile ./configs/init.lua}\nEOF";
+    extraConfig = "lua << EOF\n${builtins.readFile ./configs/init.lua}\nEOF\n\n";
     plugins = with pkgs.vimPlugins; [
       # lsp
       {
