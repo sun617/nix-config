@@ -10,6 +10,7 @@
     ./mako.nix
     ./mpv.nix
     ./udiskie.nix
+    ./wezterm.nix
     ./xdg.nix
   ];
 
@@ -89,7 +90,7 @@
           "${modifier}+f" = ''[app_id="firefox"] focus'';
           "${modifier}+p" = ''[class="Postman"] focus'';
           "${modifier}+s" = ''[class="Slack"] focus'';
-          "${modifier}+t" = ''[app_id="foot"] focus'';
+          "${modifier}+t" = ''[class="org.wezfurlong.wezterm"] focus'';
 
           "Control+${modifier}+a" = "focus parent";
           "Control+${modifier}+f" = "fullscreen";
