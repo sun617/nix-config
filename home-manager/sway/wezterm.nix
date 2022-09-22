@@ -2,7 +2,6 @@
   programs.wezterm = {
     enable = true;
     extraConfig = ''
-      local wezterm = require 'wezterm'
       local act = wezterm.action
 
       wezterm.on("update-right-status", function(window, pane)
@@ -11,6 +10,10 @@
 
       return {
         -- appearances
+        font = wezterm.font_with_fallback({
+          'JetBrains Mono',
+          'Noto Sans Mono CJK JP',
+        }),
         color_scheme = "Solarized Dark Higher Contrast",
         use_fancy_tab_bar = false,
         tab_bar_at_bottom = true,
