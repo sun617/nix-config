@@ -30,6 +30,7 @@
     gcc
     gnumake
     jq
+    pulsemixer
     ripgrep
     skim
     unar

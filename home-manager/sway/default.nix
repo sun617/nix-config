@@ -106,9 +106,9 @@
           "Control+${modifier}+m" = "focus mode_toggle";
 
           # Hot keys
-          "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume 0 +5%";
-          "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume 0 -5%";
-          "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute 0 toggle";
+          "XF86AudioRaiseVolume" = "exec --no-startup-id pulsemixer --change-volume +5";
+          "XF86AudioLowerVolume" = "exec --no-startup-id pulsemixer --change-volume -5";
+          "XF86AudioMute" = "exec --no-startup-id pulsemixer --toggle-mute";
           "XF86MonBrightnessDown" = "exec --no-startup-id ${pkgs.light}/bin/light -U 10";
           "XF86MonBrightnessUp" = "exec --no-startup-id ${pkgs.light}/bin/light -A 10";
           "XF86Sleep" = "exec systemctl suspend";
