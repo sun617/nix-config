@@ -82,7 +82,7 @@
           # lockscreen
           "Control+${modifier}+l" = "exec ${pkgs.swaylock}/bin/swaylock -eFki ${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png";
           # start your launcher
-          "${modifier}+Return" = "exec ${config.wayland.windowManager.sway.config.menu}";
+          "${modifier}+space" = "exec ${config.wayland.windowManager.sway.config.menu}";
           # Switch application
           "${modifier}+a" = ''[app_id="pavucontrol"] focus'';
           "${modifier}+c" = ''[class="Google-chrome"] focus'';
@@ -117,12 +117,11 @@
           "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
           "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
         };
-      menu = "${pkgs.wofi}/bin/wofi --insensitive --show drun";
+      menu = "${pkgs.wofi}/bin/wofi --gtk-dark --insensitive --show drun";
       modifier = "Mod4";
       output = { "*".bg = "${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill"; };
       startup = [
         { command = "${pkgs.mako}/bin/mako"; }
-        # { command = "swayrd"; }
         {
           command = ''
             ${pkgs.swayidle}/bin/swayidle -w \
@@ -133,7 +132,7 @@
           '';
         }
       ];
-      terminal = "footclient";
+      terminal = "wezterm";
       window = {
         commands = [
           {
@@ -165,6 +164,28 @@
             criteria.app_id = "pavucontrol";
           }
         ];
+      };
+      workspaceOutputAssign = [
+        { workspace = "1"; output = "eDP-1"; }
+        { workspace = "2"; output = "eDP-1"; }
+        { workspace = "3"; output = "eDP-1"; }
+        { workspace = "4"; output = "eDP-1"; }
+        { workspace = "4"; output = "eDP-1"; }
+        { workspace = "chrome"; output = "eDP-1"; }
+        { workspace = "db"; output = "eDP-1"; }
+        { workspace = "slack"; output = "eDP-1"; }
+        { workspace = "5"; output = "DP-3 eDP-1"; }
+        { workspace = "6"; output = "DP-3 eDP-1"; }
+        { workspace = "7"; output = "DP-3 eDP-1"; }
+        { workspace = "8"; output = "DP-3 eDP-1"; }
+        { workspace = "9"; output = "DP-3 eDP-1"; }
+        { workspace = "firefox"; output = "DP-3 eDP-1"; }
+      ];
+      assigns = {
+        "chrome" = [{ class = "Google-chrome"; }];
+        "db" = [{ app_id = "DBeaver"; }];
+        "firefox" = [{ app_id = "firefox"; }];
+        "slack" = [{ class = "Slack"; }];
       };
     };
   };
