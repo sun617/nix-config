@@ -86,6 +86,7 @@
           # Switch workspace
           "${modifier}+p" = "workspace prev_on_output";
           "${modifier}+n" = "workspace next_on_output";
+          "${modifier}+Backslash" = "workspace back_and_forth";
           # Switch application
           "${modifier}+c" = ''[class="Google-chrome"] focus'';
           "${modifier}+d" = ''[app_id="DBeaver"] focus'';
