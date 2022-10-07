@@ -83,12 +83,13 @@
           "Control+${modifier}+l" = "exec ${pkgs.swaylock}/bin/swaylock -eFki ${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png";
           # start your launcher
           "${modifier}+space" = "exec ${config.wayland.windowManager.sway.config.menu}";
+          # Switch workspace
+          "${modifier}+p" = "workspace prev_on_output";
+          "${modifier}+n" = "workspace next_on_output";
           # Switch application
-          "${modifier}+a" = ''[app_id="pavucontrol"] focus'';
           "${modifier}+c" = ''[class="Google-chrome"] focus'';
           "${modifier}+d" = ''[app_id="DBeaver"] focus'';
           "${modifier}+f" = ''[app_id="firefox"] focus'';
-          "${modifier}+p" = ''[class="Postman"] focus'';
           "${modifier}+s" = ''[class="Slack"] focus'';
           "${modifier}+t" = ''[class="org.wezfurlong.wezterm"] focus'';
 
