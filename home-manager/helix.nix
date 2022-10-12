@@ -72,7 +72,7 @@
             typeDefinition = true;
           };
           typescript = {
-            serverPath = "${pkgs.nodePackages.typescript}/lib/node_modules/typescript/lib/tsserverlibrary.js";
+            tsdk = "${pkgs.nodePackages.typescript}/lib/node_modules/typescript/lib";
           };
         };
       }
