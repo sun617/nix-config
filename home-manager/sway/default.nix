@@ -95,7 +95,7 @@
           "${modifier}+d" = ''[app_id="DBeaver"] focus'';
           "${modifier}+f" = ''[app_id="firefox"] focus'';
           "${modifier}+s" = ''[class="Slack"] focus'';
-          "${modifier}+t" = ''[class="org.wezfurlong.wezterm"] focus'';
+          "${modifier}+t" = ''[app_id="org.wezfurlong.wezterm"] focus'';
 
           "Control+${modifier}+a" = "focus parent";
           "Control+${modifier}+f" = "fullscreen";

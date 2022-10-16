@@ -43,7 +43,7 @@
           {key="K", mods="LEADER", action=act.SwitchWorkspaceRelative(1)},
           {key="J", mods="LEADER", action=act.SwitchWorkspaceRelative(-1)},
         },
-        enable_wayland = false
+        enable_wayland = true
       }
     '';
   };
