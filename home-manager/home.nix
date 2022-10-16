@@ -35,7 +35,6 @@
     ./lsp-servers.nix
     ./neovim
     ./sway
-    ./tmux.nix
   ];
 
   # Let Home Manager install and manage itself.
