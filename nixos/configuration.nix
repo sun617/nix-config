@@ -103,6 +103,7 @@
   #   enableSSHSupport = true;
   # };
   programs = {
+    fish.enable = true;
     ssh.startAgent = true;
     sway.enable = true;
   };
