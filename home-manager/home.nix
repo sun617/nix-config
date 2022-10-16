@@ -5,6 +5,24 @@
     username = "sun";
     homeDirectory = "/home/sun";
     stateVersion = "22.11";
+    sessionVariables = {
+      EDITOR = "hx";
+    };
+    packages = with pkgs; [
+      bat
+      bottom
+      curl
+      du-dust
+      fd
+      gcc
+      gnumake
+      jq
+      pulsemixer
+      ripgrep
+      skim
+      unar
+      zip
+    ];
   };
 
   imports = [
@@ -18,23 +36,6 @@
     ./neovim
     ./sway
     ./tmux.nix
-  ];
-
-  # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [
-    bat
-    bottom
-    curl
-    du-dust
-    fd
-    gcc
-    gnumake
-    jq
-    pulsemixer
-    ripgrep
-    skim
-    unar
-    zip
   ];
 
   # Let Home Manager install and manage itself.
