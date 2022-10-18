@@ -7,11 +7,14 @@
       theme = "solarized_dark";
       editor = {
         cursorline = true;
+        idle-timeout = 0;
         cursor-shape = {
           insert = "bar";
           select = "underline";
         };
-        idle-timeout = 0;
+        file-picker = {
+          hidden = false;
+        };
         indent-guides = {
           render = true;
         };
