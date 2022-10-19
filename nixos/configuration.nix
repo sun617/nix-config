@@ -108,6 +108,11 @@
     sway.enable = true;
   };
 
+  # https://github.com/NixOS/nixpkgs/issues/189851#issuecomment-1238907955
+  systemd.user.extraConfig = ''
+    DefaultEnvironment="PATH=/run/current-system/sw/bin"
+  '';
+
   # List services that you want to enable:
 
   services = {
