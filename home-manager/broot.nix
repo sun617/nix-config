@@ -1,6 +1,6 @@
 {
   programs.broot = {
     enable = true;
-    modal = true;
+    settings.modal = true;
   };
 }
