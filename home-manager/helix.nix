@@ -7,7 +7,6 @@
       theme = "solarized_dark";
       editor = {
         cursorline = true;
-        idle-timeout = 0;
         cursor-shape = {
           insert = "bar";
           select = "underline";
@@ -39,7 +38,6 @@
             "vue-language-server"
             "--stdio"
           ];
-          timeout = 9;
         };
         config = {
           documentFeatures = {
