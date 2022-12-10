@@ -91,7 +91,7 @@
           "${modifier}+Shift+n" = "move container to workspace next_on_output";
           "${modifier}+Shift+Backslash" = "move container to workspace back_and_forth";
           # Switch application
-          "${modifier}+c" = ''[class="Google-chrome"] focus'';
+          "${modifier}+c" = ''[app_id="google-chrome"] focus'';
           "${modifier}+d" = ''[app_id="DBeaver"] focus'';
           "${modifier}+f" = ''[app_id="firefox"] focus'';
           "${modifier}+s" = ''[class="Slack"] focus'';
@@ -153,7 +153,7 @@
           }
           {
             command = "inhibit_idle fullscreen";
-            criteria.class = "Google-chrome";
+            criteria.app_id = "google-chrome";
           }
           {
             # File upload etc.
@@ -184,12 +184,16 @@
         { workspace = "7"; output = "DP-3 eDP-1"; }
         { workspace = "8"; output = "DP-3 eDP-1"; }
         { workspace = "9"; output = "DP-3 eDP-1"; }
+        { workspace = "dolphin"; output = "DP-3 eDP-1"; }
         { workspace = "firefox"; output = "DP-3 eDP-1"; }
+        { workspace = "postman"; output = "DP-3 eDP-1"; }
       ];
       assigns = {
-        "chrome" = [{ class = "Google-chrome"; }];
+        "chrome" = [{ app_id = "google-chrome"; }];
         "db" = [{ app_id = "DBeaver"; }];
+        "dolphin" = [{ app_id = "org.kde.dolphin"; }];
         "firefox" = [{ app_id = "firefox"; }];
+        "postman" = [{ class = "Postman"; }];
         "slack" = [{ class = "Slack"; }];
       };
     };
