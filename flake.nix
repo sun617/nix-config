@@ -14,11 +14,12 @@
     helix.inputs.nixpkgs.follows = "nixpkgs";
 
     # Aws vpn client
-    awsvpnclient.url = "github:ymatsiuk/awsvpnclient";
-    awsvpnclient.inputs.nixpkgs.follows = "nixpkgs";
+    # awsvpnclient.url = "github:ymatsiuk/awsvpnclient";
+    # awsvpnclient.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, helix, awsvpnclient, ... }:
+  # outputs = { nixpkgs, home-manager, helix, awsvpnclient, ... }:
+  outputs = { nixpkgs, home-manager, helix, ... }:
     let
       inherit (nixpkgs.lib) nixosSystem;
       inherit (home-manager.lib) homeManagerConfiguration;
@@ -48,7 +49,7 @@
             ./home-manager/home.nix
             {
               nixpkgs.overlays = [
-                awsvpnclient.overlay
+                # awsvpnclient.overlay
                 helix-overlay
               ];
             }
