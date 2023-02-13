@@ -12,13 +12,8 @@
     # helix
     helix.url = "github:helix-editor/helix";
     helix.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Aws vpn client
-    # awsvpnclient.url = "github:ymatsiuk/awsvpnclient";
-    # awsvpnclient.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  # outputs = { nixpkgs, home-manager, helix, awsvpnclient, ... }:
   outputs = { nixpkgs, home-manager, helix, ... }:
     let
       inherit (nixpkgs.lib) nixosSystem;
@@ -49,7 +44,6 @@
             ./home-manager/home.nix
             {
               nixpkgs.overlays = [
-                # awsvpnclient.overlay
                 helix-overlay
               ];
             }
