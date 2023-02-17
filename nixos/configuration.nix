@@ -24,6 +24,7 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
+    settings.trusted-users = [ "root" "sun" ];
   };
 
   # Set your time zone.
@@ -140,6 +141,11 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 8096 8920 ];
+    allowedUDPPorts = [ 1900 7359 ];
+  };
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
