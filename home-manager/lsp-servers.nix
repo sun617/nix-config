@@ -7,8 +7,8 @@
     nodePackages.typescript-language-server
     nodePackages.vscode-langservers-extracted
     nodePackages.yaml-language-server
-    rnix-lsp
+    nil
     rust-analyzer
-    sumneko-lua-language-server
+    lua-language-server
   ];
 }
