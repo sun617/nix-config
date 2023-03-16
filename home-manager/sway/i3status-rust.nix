@@ -13,8 +13,8 @@
             step_width = 3;
           }
           {
-            block = "networkmanager";
-            primary_only = true;
+            block = "net";
+            format = " $icon {$signal_strength $ssid $frequency|Wired connection} via $device ";
           }
           {
             block = "battery";
@@ -24,8 +24,6 @@
           }
           {
             block = "memory";
-            format_mem = "{mem_used}/{mem_total}({mem_used_percents})";
-            format_swap = "{swap_used}/{swap_total}({swap_used_percents})";
           }
           {
             block = "cpu";
