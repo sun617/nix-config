@@ -26,6 +26,7 @@
   };
 
   imports = [
+    ./android.nix
     ./aws.nix
     ./broot.nix
     ./docker-compose.nix
