@@ -23,8 +23,10 @@
         };
       };
       keys.normal = {
-        space.w = ":w";
-        space.q = ":qa";
+        space.c = ":buffer-close";
+        space.i = ":toggle-option lsp.display-inlay-hints";
+        space.q = ":write-quit-all";
+        space.w = ":write-all";
       };
     };
     languages = [
