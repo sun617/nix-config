@@ -56,5 +56,17 @@
           home-manager
         ];
       };
+
+      templates = {
+        go = {
+          path = ./templates/go;
+          description = "Go development environment";
+        };
+
+        node = {
+          path = ./templates/node;
+          description = "Node development environment";
+        };
+      };
     };
 }
