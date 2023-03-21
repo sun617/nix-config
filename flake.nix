@@ -51,9 +51,9 @@
         };
       };
 
-      devShells.${system}.default = with pkgs; mkShell {
+      devShells.${system}.default = with pkgs; mkShellNoCC {
         packages = [
-          pkgs.home-manager
+          home-manager
         ];
       };
     };
