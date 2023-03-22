@@ -21,6 +21,7 @@
       ripgrep
       skim
       unar
+      xh
       xplr
       zip
     ];
