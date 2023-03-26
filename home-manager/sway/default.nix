@@ -10,6 +10,7 @@
     ./mako.nix
     ./mpv.nix
     ./udiskie.nix
+    ./vscode.nix
     ./wezterm.nix
     ./xdg.nix
   ];
