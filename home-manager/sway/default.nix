@@ -24,6 +24,7 @@
     slack
     slurp
     swayidle
+    tdesktop
     wf-recorder
     wl-clipboard
     wofi
