@@ -196,8 +196,11 @@
         "db" = [{ app_id = "DBeaver"; }];
         "dolphin" = [{ app_id = "org.kde.dolphin"; }];
         "firefox" = [{ app_id = "firefox"; }];
+        "insomnia" = [{ class = "Insomnia"; }];
         "postman" = [{ class = "Postman"; }];
         "slack" = [{ class = "Slack"; }];
+        "telegram" = [{ app_id = "org.telegram.desktop"; }];
+        "vscode" = [{ class = "Code"; }];
       };
     };
   };
