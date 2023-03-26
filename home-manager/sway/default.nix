@@ -3,6 +3,7 @@
 {
   imports = [
     ./fcitx5.nix
+    ./firefox.nix
     ./i3status-rust.nix
     ./kanshi.nix
     ./mako.nix
