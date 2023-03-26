@@ -21,6 +21,7 @@
     killall
     light
     playerctl
+    slack
     slurp
     swayidle
     wf-recorder
