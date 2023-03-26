@@ -4,6 +4,7 @@
   imports = [
     ./fcitx5.nix
     ./firefox.nix
+    ./gnome-keyring.nix
     ./i3status-rust.nix
     ./kanshi.nix
     ./mako.nix
