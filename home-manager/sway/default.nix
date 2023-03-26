@@ -99,6 +99,7 @@
           "${modifier}+f" = ''[app_id="firefox"] focus'';
           "${modifier}+s" = ''[class="Slack"] focus'';
           "${modifier}+t" = ''[app_id="org.wezfurlong.wezterm"] focus'';
+          "${modifier}+v" = ''[class="Code"] focus'';
 
           "Control+${modifier}+a" = "focus parent";
           "Control+${modifier}+f" = "fullscreen";
@@ -182,6 +183,7 @@
         { workspace = "chrome"; output = "eDP-1"; }
         { workspace = "db"; output = "eDP-1"; }
         { workspace = "slack"; output = "eDP-1"; }
+        { workspace = "telegram"; output = "eDP-1"; }
         { workspace = "5"; output = "DP-3 eDP-1"; }
         { workspace = "6"; output = "DP-3 eDP-1"; }
         { workspace = "7"; output = "DP-3 eDP-1"; }
@@ -189,7 +191,9 @@
         { workspace = "9"; output = "DP-3 eDP-1"; }
         { workspace = "dolphin"; output = "DP-3 eDP-1"; }
         { workspace = "firefox"; output = "DP-3 eDP-1"; }
+        { workspace = "insomnia"; output = "DP-3 eDP-1"; }
         { workspace = "postman"; output = "DP-3 eDP-1"; }
+        { workspace = "vscode"; output = "DP-3 eDP-1"; }
       ];
       assigns = {
         "chrome" = [{ app_id = "google-chrome"; }];
