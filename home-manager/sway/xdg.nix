@@ -10,11 +10,11 @@
     mimeApps = {
       enable = true;
       defaultApplications = {
-        "text/html" = [ "org.mozilla.firefox.desktop" "com.google.Chrome.desktop" ];
-        "x-scheme-handler/http" = [ "org.mozilla.firefox.desktop" "com.google.Chrome.desktop" ];
-        "x-scheme-handler/https" = [ "org.mozilla.firefox.desktop" "com.google.Chrome.desktop" ];
-        "x-scheme-handler/about" = [ "org.mozilla.firefox.desktop" "com.google.Chrome.desktop" ];
-        "x-scheme-handler/unknown" = [ "org.mozilla.firefox.desktop" "com.google.Chrome.desktop" ];
+        "text/html" = [ "firefox.desktop" "com.google.Chrome.desktop" ];
+        "x-scheme-handler/http" = [ "firefox.desktop" "com.google.Chrome.desktop" ];
+        "x-scheme-handler/https" = [ "firefox.desktop" "com.google.Chrome.desktop" ];
+        "x-scheme-handler/about" = [ "firefox.desktop" "com.google.Chrome.desktop" ];
+        "x-scheme-handler/unknown" = [ "firefox.desktop" "com.google.Chrome.desktop" ];
       };
     };
   };
