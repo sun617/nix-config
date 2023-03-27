@@ -33,6 +33,8 @@
       devShells.${system}.default = with pkgs; mkShellNoCC {
         packages = [
           go
+          delve
+          go-tools
           goose
         ];
       };
