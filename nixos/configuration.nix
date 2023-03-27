@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, nixpkgs, ... }:
 
 {
   imports =
@@ -24,6 +24,9 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
+    registry = {
+      nixpkgs.flake = nixpkgs;
+    };
     settings.trusted-users = [ "root" "sun" ];
   };
 
