@@ -4,7 +4,6 @@
   imports = [
     ./fcitx5.nix
     ./firefox.nix
-    ./gnome-keyring.nix
     ./i3status-rust.nix
     ./kanshi.nix
     ./mako.nix
@@ -16,6 +15,7 @@
   ];
 
   home.packages = with pkgs; [
+    gnome.seahorse
     grim
     imv
     killall
