@@ -96,10 +96,10 @@
           # Switch application
           "${modifier}+c" = ''[app_id="google-chrome"] focus'';
           "${modifier}+d" = ''[app_id="DBeaver"] focus'';
-          "${modifier}+f" = ''[app_id="firefox"] focus'';
-          "${modifier}+s" = ''[class="Slack"] focus'';
+          "${modifier}+b" = ''[app_id="firefox"] focus'';
+          "${modifier}+m" = ''[class="Slack"] focus'';
           "${modifier}+t" = ''[app_id="org.wezfurlong.wezterm"] focus'';
-          "${modifier}+v" = ''[class="Code"] focus'';
+          "${modifier}+e" = ''[class="Code"] focus'';
 
           "Control+${modifier}+a" = "focus parent";
           "Control+${modifier}+f" = "fullscreen";
