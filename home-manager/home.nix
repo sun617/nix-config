@@ -14,8 +14,6 @@
       curl
       du-dust
       fd
-      gcc
-      gnumake
       jq
       pulsemixer
       ripgrep
