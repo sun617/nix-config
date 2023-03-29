@@ -3,7 +3,6 @@
 {
   imports = [
     ./fcitx5.nix
-    ./firefox.nix
     ./i3status-rust.nix
     ./kanshi.nix
     ./mako.nix
@@ -24,7 +23,6 @@
     slack
     slurp
     swayidle
-    tdesktop
     wf-recorder
     wl-clipboard
     wofi
