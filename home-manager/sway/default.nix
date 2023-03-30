@@ -189,7 +189,7 @@
         { workspace = "dolphin"; output = "DP-3 eDP-1"; }
         { workspace = "firefox"; output = "DP-3 eDP-1"; }
         { workspace = "insomnia"; output = "DP-3 eDP-1"; }
-        { workspace = "postman"; output = "DP-3 eDP-1"; }
+        { workspace = "edge"; output = "DP-3 eDP-1"; }
         { workspace = "vscode"; output = "DP-3 eDP-1"; }
       ];
       assigns = {
@@ -198,7 +198,7 @@
         "dolphin" = [{ app_id = "org.kde.dolphin"; }];
         "firefox" = [{ app_id = "firefox"; }];
         "insomnia" = [{ class = "Insomnia"; }];
-        "postman" = [{ class = "Postman"; }];
+        "edge" = [{ class = "Microsoft-edge"; }];
         "slack" = [{ class = "Slack"; }];
         "telegram" = [{ app_id = "org.telegram.desktop"; }];
         "vscode" = [{ class = "Code"; }];
