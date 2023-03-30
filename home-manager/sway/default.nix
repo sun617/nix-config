@@ -73,13 +73,13 @@
         in
         lib.mkOptionDefault {
           # take screenshot
-          "Control+Mod1+a" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')'';
-          "Control+Mod1+s" = "exec ${pkgs.grim}/bin/grim -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')";
+          "${modifier}+Mod1+a" = ''exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')'';
+          "${modifier}+Mod1+s" = "exec ${pkgs.grim}/bin/grim -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')";
           # recording
-          "Control+Mod1+r" = "exec ${pkgs.wf-recorder}/bin/wf-recorder -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') -c h264_vaapi -d /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')";
-          "Control+Mod1+BackSpace" = "exec ${pkgs.killall}/bin/killall -s SIGINT wf-recorder";
+          "${modifier}+Mod1+r" = "exec ${pkgs.wf-recorder}/bin/wf-recorder -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') -c h264_vaapi -d /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')";
+          "${modifier}+Mod1+BackSpace" = "exec ${pkgs.killall}/bin/killall -s SIGINT wf-recorder";
           # lockscreen
-          "Control+${modifier}+l" = "exec ${pkgs.swaylock}/bin/swaylock -eFki ${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png";
+          "${modifier}+Mod1+l" = "exec ${pkgs.swaylock}/bin/swaylock -eFki ${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png";
           # start your launcher
           "${modifier}+space" = "exec ${config.wayland.windowManager.sway.config.menu}";
           # Switch workspace
@@ -107,9 +107,9 @@
           "Control+${modifier}+t" = "layout tabbed";
           "Control+${modifier}+e" = "layout toggle split";
           # Toggle the current focus between tiling and floating mode
-          "${modifier}+Mod1+m" = "floating toggle";
+          "${modifier}+Shift+f" = "floating toggle";
           # Swap focus between the tiling area and the floating area
-          "Control+${modifier}+m" = "focus mode_toggle";
+          "${modifier}+f" = "focus mode_toggle";
 
           # Hot keys
           "XF86AudioRaiseVolume" = "exec --no-startup-id pulsemixer --change-volume +5";
