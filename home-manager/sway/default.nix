@@ -127,6 +127,7 @@
       modifier = "Mod4";
       output = { "*".bg = "${pkgs.sway}/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill"; };
       startup = [
+        { command = "${pkgs.wl-clipboard}/bin/wl-paste --primary --watch ${pkgs.wl-clipboard}/bin/wl-copy"; }
         { command = "${pkgs.mako}/bin/mako"; }
         {
           command = ''
