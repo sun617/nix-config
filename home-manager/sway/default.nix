@@ -178,31 +178,33 @@
         { workspace = "3"; output = "eDP-1"; }
         { workspace = "4"; output = "eDP-1"; }
         { workspace = "4"; output = "eDP-1"; }
-        { workspace = "chrome"; output = "eDP-1"; }
-        { workspace = "db"; output = "eDP-1"; }
-        { workspace = "slack"; output = "eDP-1"; }
-        { workspace = "telegram"; output = "eDP-1"; }
+        { workspace = ""; output = "eDP-1"; }
+        { workspace = ""; output = "eDP-1"; }
+        { workspace = "󰒱"; output = "eDP-1"; }
+        { workspace = ""; output = "eDP-1"; }
         { workspace = "5"; output = "DP-3 eDP-1"; }
         { workspace = "6"; output = "DP-3 eDP-1"; }
         { workspace = "7"; output = "DP-3 eDP-1"; }
         { workspace = "8"; output = "DP-3 eDP-1"; }
         { workspace = "9"; output = "DP-3 eDP-1"; }
-        { workspace = "dolphin"; output = "DP-3 eDP-1"; }
-        { workspace = "firefox"; output = "DP-3 eDP-1"; }
-        { workspace = "insomnia"; output = "DP-3 eDP-1"; }
-        { workspace = "edge"; output = "DP-3 eDP-1"; }
-        { workspace = "vscode"; output = "DP-3 eDP-1"; }
+        { workspace = ""; output = "DP-3 eDP-1"; }
+        { workspace = ""; output = "DP-3 eDP-1"; }
+        { workspace = "󱂛"; output = "DP-3 eDP-1"; }
+        { workspace = "󰇩"; output = "DP-3 eDP-1"; }
+        { workspace = "󰨞"; output = "DP-3 eDP-1"; }
+        { workspace = ""; output = "DP-3 eDP-1"; }
       ];
       assigns = {
-        "chrome" = [{ app_id = "google-chrome"; }];
-        "db" = [{ app_id = "DBeaver"; }];
-        "dolphin" = [{ app_id = "org.kde.dolphin"; }];
-        "firefox" = [{ app_id = "firefox"; }];
-        "insomnia" = [{ class = "Insomnia"; }];
-        "edge" = [{ class = "Microsoft-edge"; }];
-        "slack" = [{ class = "Slack"; }];
-        "telegram" = [{ app_id = "org.telegram.desktop"; }];
-        "vscode" = [{ class = "Code"; }];
+        "" = [{ app_id = "google-chrome"; }];
+        "" = [{ app_id = "DBeaver"; }];
+        "" = [{ app_id = "org.kde.dolphin"; }];
+        "" = [{ app_id = "firefox"; }];
+        "󱂛" = [{ class = "Insomnia"; }];
+        "󰇩" = [{ class = "Microsoft-edge"; }];
+        "󰒱" = [{ class = "Slack"; }];
+        "" = [{ app_id = "org.telegram.desktop"; }];
+        "󰨞" = [{ class = "Code"; }];
+        "" = [{ app_id = "org.wezfurlong.wezterm"; }];
       };
     };
   };
