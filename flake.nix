@@ -73,6 +73,11 @@
           path = ./templates/node;
           description = "Node development environment";
         };
+
+        rust = {
+          path = ./templates/rust;
+          description = "Rust development environment";
+        };
       };
     };
 }
