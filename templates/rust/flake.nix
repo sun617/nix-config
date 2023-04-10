@@ -13,6 +13,7 @@
     {
       devShells.${system}.default = with pkgs; mkShellNoCC {
         packages = [
+          gcc
           rustup
           rust-analyzer
         ];
