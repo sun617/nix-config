@@ -91,12 +91,14 @@
           "${modifier}+Shift+n" = "move container to workspace next_on_output";
           "${modifier}+Shift+Backslash" = "move container to workspace back_and_forth";
           # Switch application
+          "${modifier}+a" = ''[class="Insomnia"] focus'';
+          "${modifier}+b" = ''[app_id="firefox"] focus'';
           "${modifier}+c" = ''[app_id="google-chrome"] focus'';
           "${modifier}+d" = ''[app_id="DBeaver"] focus'';
-          "${modifier}+b" = ''[app_id="firefox"] focus'';
-          "${modifier}+m" = ''[class="Slack"] focus'';
-          "${modifier}+t" = ''[app_id="org.wezfurlong.wezterm"] focus'';
           "${modifier}+e" = ''[class="Code"] focus'';
+          "${modifier}+m" = ''[class="Slack"] focus'';
+          "${modifier}+s" = ''[class="RedisInsight-v2"] focus'';
+          "${modifier}+t" = ''[app_id="org.wezfurlong.wezterm"] focus'';
 
           "Control+${modifier}+a" = "focus parent";
           "Control+${modifier}+f" = "fullscreen";
@@ -192,6 +194,7 @@
         { workspace = "󰇩"; output = "DP-3 eDP-1"; }
         { workspace = "󰨞"; output = "DP-3 eDP-1"; }
         { workspace = ""; output = "DP-3 eDP-1"; }
+        { workspace = ""; output = "DP-3 eDP-1"; }
       ];
       assigns = {
         "" = [{ app_id = "google-chrome"; }];
@@ -204,6 +207,7 @@
         "" = [{ app_id = "org.telegram.desktop"; }];
         "󰨞" = [{ class = "Code"; }];
         "" = [{ app_id = "org.wezfurlong.wezterm"; }];
+        "" = [{ class = "RedisInsight-v2"; }];
       };
     };
   };
