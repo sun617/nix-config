@@ -94,11 +94,12 @@
           "${modifier}+a" = ''[class="Insomnia"] focus'';
           "${modifier}+b" = ''[app_id="firefox"] focus'';
           "${modifier}+c" = ''[app_id="google-chrome"] focus'';
-          "${modifier}+d" = ''[app_id="DBeaver"] focus'';
-          "${modifier}+e" = ''[class="Code"] focus'';
+          "${modifier}+d" = ''[class="beekeeper-studio"] focus'';
+          "${modifier}+e" = ''[class="Microsoft-edge"] focus'';
           "${modifier}+m" = ''[class="Slack"] focus'';
           "${modifier}+s" = ''[class="RedisInsight-v2"] focus'';
           "${modifier}+t" = ''[app_id="org.wezfurlong.wezterm"] focus'';
+          "${modifier}+v" = ''[class="Code"] focus'';
 
           "Control+${modifier}+a" = "focus parent";
           "Control+${modifier}+f" = "fullscreen";
@@ -183,6 +184,9 @@
         { workspace = ""; output = "eDP-1"; }
         { workspace = "󰒱"; output = "eDP-1"; }
         { workspace = ""; output = "eDP-1"; }
+        { workspace = "󰇩"; output = "eDP-1"; }
+        { workspace = ""; output = "eDP-1"; }
+        { workspace = "󱂛"; output = "eDP-1"; }
         { workspace = "5"; output = "DP-3 eDP-1"; }
         { workspace = "6"; output = "DP-3 eDP-1"; }
         { workspace = "7"; output = "DP-3 eDP-1"; }
@@ -190,15 +194,12 @@
         { workspace = "9"; output = "DP-3 eDP-1"; }
         { workspace = ""; output = "DP-3 eDP-1"; }
         { workspace = ""; output = "DP-3 eDP-1"; }
-        { workspace = "󱂛"; output = "DP-3 eDP-1"; }
-        { workspace = "󰇩"; output = "DP-3 eDP-1"; }
         { workspace = "󰨞"; output = "DP-3 eDP-1"; }
         { workspace = ""; output = "DP-3 eDP-1"; }
-        { workspace = ""; output = "DP-3 eDP-1"; }
       ];
       assigns = {
         "" = [{ app_id = "google-chrome"; }];
-        "" = [{ app_id = "DBeaver"; }];
+        "" = [{ class = "beekeeper-studio"; }];
         "" = [{ app_id = "org.kde.dolphin"; }];
         "" = [{ app_id = "firefox"; }];
         "󱂛" = [{ class = "Insomnia"; }];
