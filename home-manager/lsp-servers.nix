@@ -2,8 +2,13 @@
 
 {
   home.packages = with pkgs; [
-    nodePackages.yaml-language-server
-    nil
+    gopls
     lua-language-server
+    nil
+    nodePackages.typescript-language-server
+    nodePackages.volar
+    nodePackages.vscode-langservers-extracted
+    nodePackages.yaml-language-server
+    rust-analyzer
   ];
 }

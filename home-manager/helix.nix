@@ -33,11 +33,8 @@
       {
         name = "vue";
         language-server = {
-          command = "npx";
+          command = "vue-language-server";
           args = [
-            "--package"
-            "@volar/vue-language-server"
-            "vue-language-server"
             "--stdio"
           ];
         };

@@ -14,10 +14,6 @@
       devShells.${system}.default = with pkgs; mkShellNoCC {
         packages = [
           nodejs-slim-16_x
-          nodePackages.npm
-          nodePackages.typescript
-          nodePackages.typescript-language-server
-          nodePackages.vscode-langservers-extracted
         ];
       };
     };

@@ -15,7 +15,6 @@
         packages = [
           gcc
           rustup
-          rust-analyzer
         ];
       };
     };
