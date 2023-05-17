@@ -100,7 +100,7 @@
           "${modifier}+m" = ''[class="Slack"] focus'';
           "${modifier}+s" = ''[class="RedisInsight-v2"] focus'';
           "${modifier}+t" = ''[app_id="org.wezfurlong.wezterm"] focus'';
-          "${modifier}+v" = ''[class="Code"] focus'';
+          "${modifier}+v" = ''[class="Code - Insiders"] focus'';
 
           "Control+${modifier}+a" = "focus parent";
           "Control+${modifier}+f" = "fullscreen";
@@ -207,7 +207,7 @@
         "󰇩" = [{ class = "Microsoft-edge"; }];
         "󰒱" = [{ class = "Slack"; }];
         "" = [{ app_id = "org.telegram.desktop"; }];
-        "󰨞" = [{ class = "Code"; }];
+        "󰨞" = [{ class = "Code - Insiders"; }];
         "" = [{ app_id = "org.wezfurlong.wezterm"; }];
         "" = [{ class = "RedisInsight-v2"; }];
       };
