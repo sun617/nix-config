@@ -7,6 +7,7 @@
     ./kanshi.nix
     ./mako.nix
     ./mpv.nix
+    ./pointerCursor.nix
     ./syncthing.nix
     ./udiskie.nix
     ./vscode.nix

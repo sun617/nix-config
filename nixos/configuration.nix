@@ -93,8 +93,8 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  ];
+  # environment.systemPackages = with pkgs; [
+  # ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -170,7 +170,7 @@
     font-awesome_6
     (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
-  
+
   # https://github.com/NixOS/nixpkgs/issues/119433#issuecomment-1326957279
   system.fsPackages = [ pkgs.bindfs ];
   fileSystems = let
@@ -186,7 +186,8 @@
     };
   in {
     # Create an FHS mount to support flatpak host icons/fonts
-    "/usr/share/icons" = mkRoSymBind (config.system.path + "/share/icons");
+    # "/usr/share/icons" = mkRoSymBind (config.system.path + "/share/icons");
+    "/usr/share/icons" = mkRoSymBind "/home/sun/.nix-profile/share/icons";
     "/usr/share/fonts" = mkRoSymBind (aggregatedFonts + "/share/fonts");
   };
 }
