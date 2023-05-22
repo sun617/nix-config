@@ -29,21 +29,81 @@
         space.w = ":write-all";
       };
     };
-    languages = [
-      {
-        name = "vue";
-        language-server = {
-          command = "vue-language-server";
-          args = [
-            "--stdio"
-          ];
-        };
+    languages = {
+      language-server.vue-language-server = {
+        command = "vue-language-server";
+        args = [
+          "--stdio"
+        ];
         config = {
           typescript = {
             tsdk = "${pkgs.nodePackages.typescript}/lib/node_modules/typescript/lib";
           };
         };
-      }
-    ];
+      };
+      # https://github.com/helix-editor/helix/pull/2507#issuecomment-1485261780
+      language-server.eslint = {
+        command = "vscode-eslint-language-server";
+        args = [
+          "--stdio"
+        ];
+        config = {
+          validate = "on";
+          experimental = {
+            useFlatConfig = false;
+          };
+          rulesCustomizations = [];
+          run = "onType";
+          problems = {
+            shortenToSingleLine = false;
+          };
+          nodePath = "";
+          codeAction = {
+            disableRuleComment = {
+              enable = true;
+              location = "sameLine";
+            };
+            showDocumentation = {
+              enable = true;
+            };
+          };
+        };
+      };
+      language = [
+        {
+          name = "typescript";
+          auto-format = true;
+          # formatter = {
+          #   command = "prettier";
+          #   args = [
+          #     "--parser"
+          #     "typescript"
+          #   ];
+          # };
+          language-servers = [
+            {
+              name = "typescript-language-server";
+              except-features = [
+                "format"
+              ];
+            }
+            "eslint"
+          ];
+        }
+        {
+          name = "vue";
+          auto-format = true;
+          language-servers = [
+            {
+              name = "vue-language-server";
+              except-features = [
+                "format"
+              ];
+            }
+            "eslint"
+          ];
+        }
+      ];
+    };
   };
 }
