@@ -170,6 +170,18 @@
     font-awesome_6
     (nerdfonts.override { fonts = [ "Hack" ]; })
   ];
+  # icons
+  environment.systemPackages = let
+    mkDefaultCursorIcon = pkgs.writeTextDir "share/icons/default/index.theme" ''
+      [icon theme]
+      Name=Default
+      Comment=Default Cursor Theme
+      Inherits=Vanilla-DMZ
+    '';
+  in [
+    pkgs.vanilla-dmz
+    mkDefaultCursorIcon
+  ];
 
   # https://github.com/NixOS/nixpkgs/issues/119433#issuecomment-1326957279
   system.fsPackages = [ pkgs.bindfs ];
@@ -186,8 +198,7 @@
     };
   in {
     # Create an FHS mount to support flatpak host icons/fonts
-    # "/usr/share/icons" = mkRoSymBind (config.system.path + "/share/icons");
-    "/usr/share/icons" = mkRoSymBind "/home/sun/.nix-profile/share/icons";
+    "/usr/share/icons" = mkRoSymBind (config.system.path + "/share/icons");
     "/usr/share/fonts" = mkRoSymBind (aggregatedFonts + "/share/fonts");
   };
 }
