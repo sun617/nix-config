@@ -176,10 +176,10 @@
       [icon theme]
       Name=Default
       Comment=Default Cursor Theme
-      Inherits=Vanilla-DMZ
+      Inherits=Bibata-Modern-Ice
     '';
   in [
-    pkgs.vanilla-dmz
+    pkgs.bibata-cursors
     mkDefaultCursorIcon
   ];
 
