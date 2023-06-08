@@ -83,6 +83,11 @@
           path = ./templates/rust;
           description = "Rust development environment";
         };
+
+        flutter = {
+          path = ./templates/flutter;
+          description = "Flutter development environment";
+        };
       };
     };
 }
