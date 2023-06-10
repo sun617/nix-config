@@ -38,7 +38,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # https://github.com/nix-community/home-manager/issues/2942
-  nixpkgs.config.allowUnfreePredicate = (_: true);
 }
