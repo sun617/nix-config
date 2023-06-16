@@ -16,6 +16,8 @@
         };
       };
       android = pkgs.androidenv.composeAndroidPackages {
+        # https://github.com/babariviere/flutter-nix-hello-world/blob/master/nix/android.nix
+        buildToolsVersions = [ "30.0.3" ];
         platformVersions = [ "30" "31" "32" "33" ];
       };
     in
@@ -23,12 +25,12 @@
       devShells.${system}.default = with pkgs; mkShellNoCC {
         packages = [
           flutter
-          jdk
+          jdk17
           android.platform-tools
         ];
 
         ANDROID_SDK_ROOT = "${android.androidsdk}/libexec/android-sdk";
-        JAVA_HOME = pkgs.jdk;
+        JAVA_HOME = pkgs.jdk17;
       };
     };
 }
