@@ -27,7 +27,6 @@
     registry = {
       nixpkgs.flake = nixpkgs;
     };
-    # settings.trusted-users = [ "root" "sun" ];
   };
 
   # Set your time zone.
