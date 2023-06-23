@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   programs.helix = {
     enable = true;
@@ -30,17 +28,6 @@
       };
     };
     languages = {
-      language-server.vue-language-server = {
-        command = "vue-language-server";
-        args = [
-          "--stdio"
-        ];
-        config = {
-          typescript = {
-            tsdk = "${pkgs.nodePackages.typescript}/lib/node_modules/typescript/lib";
-          };
-        };
-      };
       # https://github.com/helix-editor/helix/pull/2507#issuecomment-1485261780
       language-server.eslint = {
         command = "vscode-eslint-language-server";
@@ -87,7 +74,7 @@
                 "format"
               ];
             }
-            "eslint"
+            # "eslint"
           ];
         }
         {
@@ -95,12 +82,13 @@
           auto-format = true;
           language-servers = [
             {
-              name = "vue-language-server";
+              name = "vuels";
               except-features = [
                 "format"
               ];
             }
-            "eslint"
+            # https://github.com/NixOS/nixpkgs/pull/234888
+            # "eslint"
           ];
         }
       ];
