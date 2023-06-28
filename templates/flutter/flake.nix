@@ -15,22 +15,21 @@
           android_sdk.accept_license = true;
         };
       };
-      android = pkgs.androidenv.composeAndroidPackages {
-        # https://github.com/babariviere/flutter-nix-hello-world/blob/master/nix/android.nix
+      androidComposition = pkgs.androidenv.composeAndroidPackages {
         buildToolsVersions = [ "30.0.3" ];
-        platformVersions = [ "30" "31" "32" "33" ];
+        platformVersions = [ "33" ];
       };
+      androidSdk = androidComposition.androidsdk;
     in
     {
       devShells.${system}.default = with pkgs; mkShellNoCC {
         packages = [
           flutter
           jdk17
-          android.platform-tools
+          androidSdk
         ];
 
-        ANDROID_SDK_ROOT = "${android.androidsdk}/libexec/android-sdk";
-        JAVA_HOME = pkgs.jdk17;
+        ANDROID_SDK_ROOT = "${androidSdk}/libexec/android-sdk";
       };
     };
 }
