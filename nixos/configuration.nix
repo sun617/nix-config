@@ -82,6 +82,7 @@
     shell = pkgs.fish;
     extraGroups = [
       "docker"
+      "libvirtd"
       "networkmanager"
       "wheel" # Enable ‘sudo’ for the user.
     ];
@@ -133,7 +134,10 @@
     wlr.enable = true;
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+  };
 
 
   # Open ports in the firewall.
