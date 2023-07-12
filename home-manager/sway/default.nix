@@ -7,7 +7,6 @@
     ./kanshi.nix
     ./mako.nix
     ./mpv.nix
-    ./syncthing.nix
     ./udiskie.nix
     ./vscode.nix
     ./wezterm.nix
