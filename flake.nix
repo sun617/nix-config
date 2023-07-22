@@ -19,7 +19,6 @@
 
     # helix
     helix.url = "github:helix-editor/helix";
-    helix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, nixos-hardware, home-manager, helix, ... }:
