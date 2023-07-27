@@ -2,30 +2,8 @@
 
 {
   imports = [
-    ./fcitx5.nix
     ./i3status-rust.nix
     ./kanshi.nix
-    ./mako.nix
-    ./mpv.nix
-    ./syncthing.nix
-    ./udiskie.nix
-    ./vscode.nix
-    ./wezterm.nix
-    ./xdg.nix
-  ];
-
-  home.packages = with pkgs; [
-    gnome.seahorse
-    grim
-    imv
-    killall
-    light
-    playerctl
-    slurp
-    swayidle
-    wf-recorder
-    wl-clipboard
-    wofi
   ];
 
   programs.fish.loginShellInit = ''

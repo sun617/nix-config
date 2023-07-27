@@ -107,6 +107,7 @@
     fish.enable = true;
     ssh.startAgent = true;
     sway.enable = true;
+    hyprland.enable = true;
   };
 
   # https://github.com/NixOS/nixpkgs/issues/189851#issuecomment-1238907955
@@ -131,7 +132,6 @@
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    wlr.enable = true;
   };
 
   virtualisation = {

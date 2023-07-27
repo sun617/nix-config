@@ -33,7 +33,7 @@
     ./git.nix
     ./helix.nix
     ./lsp-servers.nix
-    ./sway
+    ./wayland
   ];
 
   # Let Home Manager install and manage itself.

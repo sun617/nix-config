@@ -2,8 +2,14 @@
   description = "My NixOS configuration";
 
   nixConfig = {
-    extra-trusted-substituters = ["https://helix.cachix.org"];
-    extra-trusted-public-keys = ["helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="];
+    extra-trusted-substituters = [
+      "https://helix.cachix.org"
+      "https://hyprland.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    ];
   };
 
   inputs = {
@@ -19,9 +25,12 @@
 
     # helix
     helix.url = "github:helix-editor/helix";
+
+    # hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, helix, ... }:
+  outputs = { nixpkgs, nixos-hardware, home-manager, helix, hyprland, ... }:
     let
       inherit (nixpkgs.lib) nixosSystem;
       inherit (home-manager.lib) homeManagerConfiguration;
@@ -37,6 +46,10 @@
       helix-overlay = final: prev: {
         helix = helix.packages.${system}.default;
       };
+
+      hyprland-overlay = final: prev: {
+        hyprland = hyprland.packages.${system}.hyprland;
+      };
     in
     {
       nixosConfigurations = {
@@ -46,6 +59,11 @@
           modules = [
             ./nixos/configuration.nix
             nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
+            {
+              nixpkgs.overlays = [
+                hyprland-overlay
+              ];
+            }
           ];
 
           specialArgs = { inherit nixpkgs; };
