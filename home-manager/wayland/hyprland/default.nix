@@ -5,6 +5,12 @@
     ./waybar.nix
   ];
 
+  programs.fish.loginShellInit = ''
+    if test (tty) = /dev/tty1
+      exec Hyprland > /tmp/hyprland-"$(date +%Y%m%d%H%M)".log 2>&1
+    end
+  '';
+
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland = {
