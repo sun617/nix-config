@@ -106,7 +106,7 @@
   programs = {
     fish.enable = true;
     ssh.startAgent = true;
-    sway.enable = true;
+    # sway.enable = true;
     hyprland.enable = true;
   };
 
