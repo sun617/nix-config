@@ -74,7 +74,7 @@
                 "format"
               ];
             }
-            # "eslint"
+            "eslint"
           ];
         }
         {
@@ -87,8 +87,7 @@
                 "format"
               ];
             }
-            # https://github.com/NixOS/nixpkgs/pull/234888
-            # "eslint"
+            "eslint"
           ];
         }
       ];
