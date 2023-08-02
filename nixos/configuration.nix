@@ -163,7 +163,7 @@
   system.stateVersion = "22.05"; # Did you read the comment?
 
   # fonts
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
@@ -194,7 +194,7 @@
     };
     aggregatedFonts = pkgs.buildEnv {
       name = "system-fonts";
-      paths = config.fonts.fonts;
+      paths = config.fonts.packages;
       pathsToLink = [ "/share/fonts" ];
     };
   in {
