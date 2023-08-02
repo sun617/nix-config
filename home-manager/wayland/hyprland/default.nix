@@ -125,6 +125,7 @@
       ];
       windowrulev2 = [
         "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
+        "float,class:^(firefox)$,title:^(Firefox — Sharing Indicator)$"
         "float,class:^(org.fcitx.)$"
         "float,class:^(imv)$"
         "workspace name:firefox,class:^(firefox)$"
@@ -211,7 +212,8 @@
 
         # Dispatchers
         "$mainMod ALT, e, exit"
-        "$mainMod ALT, f, togglefloating"
+        "$mainMod ALT, f, fullscreen"
+        "$mainMod ALT, m, togglefloating"
         "$mainMod ALT, p, pseudo"
         "$mainMod ALT, q, killactive"
         "$mainMod ALT, s, togglesplit"
