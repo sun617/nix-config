@@ -1,17 +1,6 @@
 {
   description = "My NixOS configuration";
 
-  nixConfig = {
-    extra-trusted-substituters = [
-      "https://helix.cachix.org"
-      "https://hyprland.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-    ];
-  };
-
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -41,29 +30,20 @@
         config = {
           allowUnfree = true;
         };
-      };
-
-      helix-overlay = final: prev: {
-        helix = helix.packages.${system}.default;
-      };
-
-      hyprland-overlay = final: prev: {
-        hyprland = hyprland.packages.${system}.hyprland;
+        overlays = [
+          (_: _: { helix = helix.packages.${system}.default; })
+          (_: _: { hyprland = hyprland.packages.${system}.hyprland; })
+        ];
       };
     in
     {
       nixosConfigurations = {
         x1c9 = nixosSystem {
-          inherit system;
+          inherit pkgs system;
 
           modules = [
             ./nixos/configuration.nix
             nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
-            {
-              nixpkgs.overlays = [
-                hyprland-overlay
-              ];
-            }
           ];
 
           specialArgs = { inherit nixpkgs; };
@@ -75,11 +55,6 @@
           inherit pkgs;
           modules = [
             ./home-manager/home.nix
-            {
-              nixpkgs.overlays = [
-                helix-overlay
-              ];
-            }
           ];
         };
       };
