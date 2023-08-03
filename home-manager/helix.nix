@@ -28,6 +28,16 @@
       };
     };
     languages = {
+      language-server.vue-language-server = {
+        command = "npx";
+        args = [
+          "--package"
+          "@vue/language-server"
+          "vue-language-server"
+          "--stdio"
+        ];
+        config.typescript.tsdk = "node_modules/typescript/lib/";
+      };
       # https://github.com/helix-editor/helix/pull/2507#issuecomment-1485261780
       language-server.eslint = {
         command = "vscode-eslint-language-server";
@@ -82,7 +92,8 @@
           auto-format = true;
           language-servers = [
             {
-              name = "vuels";
+              # name = "vuels";
+              name = "vue-language-server";
               except-features = [
                 "format"
               ];
