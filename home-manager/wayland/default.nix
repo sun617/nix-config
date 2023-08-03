@@ -23,6 +23,7 @@
     light
     playerctl
     slurp
+    swappy
     swaylock
     wf-recorder
     wl-clipboard
