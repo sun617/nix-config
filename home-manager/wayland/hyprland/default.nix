@@ -126,8 +126,15 @@
         "float,class:^(firefox)$,title:^(Firefox — Sharing Indicator)$"
         "float,class:^(org.fcitx.)$"
         "float,class:^(imv)$"
+        "workspace name:chrome,class:^(google-chrome)$"
+        "workspace name:database,class:^(DBeaver)$"
+        "workspace name:edge,class:^(Microsoft-edge)$"
         "workspace name:firefox,class:^(firefox)$"
+        "workspace name:insomnia,class:^(Insomnia)$"
+        "workspace name:redis,class:^(RedisInsight)$"
         "workspace name:slack,class:^(Slack)$"
+        "workspace name:terminal,class:^(org.wezfurlong.wezterm)$"
+        "workspace name:vscode,class:^(Code)$"
       ];
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
