@@ -224,9 +224,9 @@
         "$mainMod ALT, s, togglesplit"
 
         # Hot keys
-        ",XF86AudioRaiseVolume, exec, pulsemixer --change-volume +5"
-        ",XF86AudioLowerVolume, exec, pulsemixer --change-volume -5"
-        ",XF86AudioMute, exec, pulsemixer --toggle-mute"
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
         ",XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
         ",XF86AudioStop, exec, ${pkgs.playerctl}/bin/playerctl stop"
         ",XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous"

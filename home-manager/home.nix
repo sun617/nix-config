@@ -15,7 +15,6 @@
       du-dust
       fd
       jq
-      pulsemixer
       ripgrep
       skim
       unar
