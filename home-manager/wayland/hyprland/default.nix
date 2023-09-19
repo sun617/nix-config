@@ -163,7 +163,7 @@
         "$mainMod, m, focuswindow, ^(Slack)$"
         "$mainMod, s, focuswindow, ^(RedisInsight-v2)$"
         "$mainMod, t, focuswindow, ^(org.wezfurlong.wezterm)$"
-        "$mainMod, v, focuswindow, ^(Code - Insiders)$"
+        "$mainMod, v, focuswindow, ^(Code)$"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
