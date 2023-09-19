@@ -8,25 +8,8 @@
   outputs = { self, nixpkgs }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-
-      goose = with pkgs; buildGoModule rec {
-        pname = "goose";
-        version = "3.10.0";
-
-        src = fetchFromGitHub {
-          owner = "pressly";
-          repo = "goose";
-          rev = "v${version}";
-          sha256 = "sha256-BtP1oYvIYfyMohq24LA5m3O6VmxBdOmkCHrnFZrMh4M=";
-          # xh --download https://www.github.com/pressly/goose/archive/v3.10.0.tar.gz
-          # tar zxvf goose-3.10.0.tar.gz
-          # nix hash path goose-3.10.0
-        };
-
-        vendorSha256 = "sha256-ax6wBFl2XUNKMsVTpJO53cpIjMq+xI3BgIGSWkXXY4E=";
-
-        doCheck = false;
+      pkgs = import nixpkgs {
+        inherit system;
       };
     in
     {
