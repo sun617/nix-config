@@ -33,6 +33,7 @@
     ./helix.nix
     ./lsp-servers.nix
     ./wayland
+    ./yazi.nix
   ];
 
   # Let Home Manager install and manage itself.
