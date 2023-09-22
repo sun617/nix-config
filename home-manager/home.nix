@@ -33,6 +33,7 @@
     ./helix.nix
     ./lsp-servers.nix
     ./wayland
+    ./wireplumber.nix
     ./yazi.nix
   ];
 
