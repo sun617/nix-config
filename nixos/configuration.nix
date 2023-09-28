@@ -135,6 +135,7 @@
   # List services that you want to enable:
 
   services = {
+    blueman.enable = true;
     flatpak.enable = true;
     gnome.gnome-keyring.enable = true;
     logind.lidSwitchDocked = "suspend";

@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./blueman-applet.nix
     ./fcitx5.nix
     ./mako.nix
     ./mpv.nix
