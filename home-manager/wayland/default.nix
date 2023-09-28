@@ -6,6 +6,7 @@
     ./fcitx5.nix
     ./mako.nix
     ./mpv.nix
+    ./network-manager-applet.nix
     ./syncthing.nix
     ./swayidle.nix
     ./udiskie.nix
