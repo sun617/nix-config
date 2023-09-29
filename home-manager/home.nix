@@ -19,7 +19,6 @@
       skim
       unar
       xh
-      xplr
       zip
     ];
   };
