@@ -4,6 +4,7 @@
   imports = [
     ./blueman-applet.nix
     ./fcitx5.nix
+    ./gtk.nix
     ./mako.nix
     ./mpv.nix
     ./network-manager-applet.nix
