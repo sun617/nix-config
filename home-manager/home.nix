@@ -20,6 +20,7 @@
       unar
       xh
       zip
+      zola
     ];
   };
 
