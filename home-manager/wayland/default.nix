@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./alacritty.nix
     ./blueman-applet.nix
     ./fcitx5.nix
     ./gtk.nix
