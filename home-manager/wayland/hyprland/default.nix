@@ -126,6 +126,7 @@
         "float,class:^(firefox)$,title:^(Firefox — Sharing Indicator)$"
         "float,class:^(org.fcitx.)$"
         "float,class:^(imv)$"
+        "workspace name:alacritty,class:^(Alacritty)$"
         "workspace name:chrome,class:^(google-chrome)$"
         "workspace name:database,class:^(DBeaver)$"
         "workspace name:edge,class:^(Microsoft-edge)$"
@@ -133,7 +134,8 @@
         "workspace name:insomnia,class:^(Insomnia)$"
         "workspace name:redis,class:^(RedisInsight)$"
         "workspace name:slack,class:^(Slack)$"
-        "workspace name:terminal,class:^(org.wezfurlong.wezterm)$"
+        "workspace name:telegram,class:^(org.telegram.desktop)$"
+        "workspace name:wezterm,class:^(org.wezfurlong.wezterm)$"
         "workspace name:vscode,class:^(Code)$"
       ];
 
@@ -155,11 +157,12 @@
         "CONTROL $mainMod, l, exec, ${pkgs.swaylock}/bin/swaylock -eFki ${pkgs.hyprland}/share/hyprland/wall_4K.png"
 
         # Focus app window
-        "$mainMod, a, focuswindow, ^(Insomnia)$"
+        "$mainMod, a, focuswindow, ^(Alacritty)$"
         "$mainMod, b, focuswindow, ^(firefox)$"
         "$mainMod, c, focuswindow, ^(google-chrome)$"
         "$mainMod, d, focuswindow, ^(DBeaver)$"
         "$mainMod, e, focuswindow, ^(Microsoft-edge)$"
+        "$mainMod, i, focuswindow, ^(Insomnia)$"
         "$mainMod, m, focuswindow, ^(Slack)$"
         "$mainMod, s, focuswindow, ^(RedisInsight-v2)$"
         "$mainMod, t, focuswindow, ^(org.wezfurlong.wezterm)$"
