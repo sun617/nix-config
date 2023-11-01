@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    golangci-lint
     golangci-lint-langserver
     gopls
     lua-language-server
