@@ -20,6 +20,7 @@
   ];
 
   home.packages = with pkgs; [
+    appimage-run
     gnome.seahorse
     grim
     imv
