@@ -31,6 +31,7 @@
             default = "";
 
             chrome = "";
+            cursor = "";
             database = "";
             drive = "";
             edge = "󰇩";
