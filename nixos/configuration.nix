@@ -153,7 +153,19 @@
   };
 
   virtualisation = {
-    docker.enable = true;
+    docker = {
+      enable = true;
+      # https://github.com/docker-library/mysql/issues/579#issuecomment-1432576518
+      daemon.settings = {
+        default-ulimits = {
+          nofile = {
+            Hard = 64000;
+            Name = "nofile";
+            Soft = 64000;
+          };
+        };
+      };
+    };
     libvirtd.enable = true;
   };
 
