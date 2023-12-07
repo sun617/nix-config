@@ -136,6 +136,7 @@
         "workspace name:insomnia,class:^(Insomnia)$"
         "workspace name:redis,class:^(RedisInsight)$"
         "workspace name:slack,class:^(Slack)$"
+        "workspace name:spacedrive,class:^(Spacedrive)$"
         "workspace name:telegram,class:^(org.telegram.desktop)$"
         "workspace name:wezterm,class:^(org.wezfurlong.wezterm)$"
         "workspace name:vscode,class:^(Code)$"
@@ -167,7 +168,8 @@
         "$mainMod, h, focuswindow, ^(google-chrome)$"
         "$mainMod, i, focuswindow, ^(Insomnia)$"
         "$mainMod, m, focuswindow, ^(Slack)$"
-        "$mainMod, s, focuswindow, ^(RedisInsight-v2)$"
+        "$mainMod, r, focuswindow, ^(RedisInsight-v2)$"
+        "$mainMod, s, focuswindow, ^(Spacedrive)$"
         "$mainMod, t, focuswindow, ^(org.wezfurlong.wezterm)$"
         "$mainMod, v, focuswindow, ^(Code)$"
 

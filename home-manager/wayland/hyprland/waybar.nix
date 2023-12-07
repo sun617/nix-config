@@ -33,7 +33,7 @@
             chrome = "";
             cursor = "";
             database = "";
-            drive = "";
+            spacedrive = "";
             edge = "󰇩";
             firefox = "";
             insomnia = "󱂛";

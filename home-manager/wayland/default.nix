@@ -9,8 +9,8 @@
     ./mako.nix
     ./mpv.nix
     ./network-manager-applet.nix
-    ./syncthing.nix
     ./swayidle.nix
+    ./syncthing.nix
     ./udiskie.nix
     ./vscode.nix
     ./wezterm.nix
@@ -28,6 +28,7 @@
     light
     playerctl
     slurp
+    spacedrive
     swappy
     swaylock
     wf-recorder
