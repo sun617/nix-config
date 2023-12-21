@@ -15,6 +15,7 @@
       du-dust
       fd
       jq
+      ollama
       ripgrep
       skim
       unar
