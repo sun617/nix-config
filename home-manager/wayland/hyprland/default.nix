@@ -123,8 +123,8 @@
         "name:slack, monitor:eDP-1"
       ];
       windowrulev2 = [
-        "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
-        "float,class:^(firefox)$,title:^(Firefox — Sharing Indicator)$"
+        "float,class:^(org.mozilla.firefox)$,title:^(Picture-in-Picture)$"
+        "float,class:^(org.mozilla.firefox)$,title:^(Firefox — Sharing Indicator)$"
         "float,class:^(org.fcitx.)$"
         "float,class:^(imv)$"
         "workspace name:alacritty,class:^(Alacritty)$"
@@ -132,7 +132,7 @@
         "workspace name:chrome,class:^(google-chrome)$"
         "workspace name:database,class:^(DBeaver)$"
         "workspace name:edge,class:^(Microsoft-edge)$"
-        "workspace name:firefox,class:^(firefox)$"
+        "workspace name:firefox,class:^(org.mozilla.firefox)$"
         "workspace name:insomnia,class:^(Insomnia)$"
         "workspace name:redis,class:^(RedisInsight)$"
         "workspace name:slack,class:^(Slack)$"
@@ -161,7 +161,7 @@
 
         # Focus app window
         "$mainMod, a, focuswindow, ^(Alacritty)$"
-        "$mainMod, b, focuswindow, ^(firefox)$"
+        "$mainMod, b, focuswindow, ^(org.mozilla.firefox)$"
         "$mainMod, c, focuswindow, ^(Cursor)$"
         "$mainMod, d, focuswindow, ^(DBeaver)$"
         "$mainMod, e, focuswindow, ^(Microsoft-edge)$"
