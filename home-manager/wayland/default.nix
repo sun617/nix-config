@@ -21,6 +21,7 @@
 
   home.packages = with pkgs; [
     appimage-run
+    ffmpeg
     gnome.seahorse
     grim
     imv
