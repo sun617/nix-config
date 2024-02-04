@@ -12,6 +12,7 @@
       bat
       bottom
       curl
+      devbox
       du-dust
       fd
       jq
