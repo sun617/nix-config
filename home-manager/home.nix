@@ -9,6 +9,7 @@
       EDITOR = "hx";
     };
     packages = with pkgs; [
+      azure-cli
       bat
       bottom
       curl
