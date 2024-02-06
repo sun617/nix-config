@@ -153,6 +153,11 @@
       alsa.enable = true;
       pulse.enable = true;
     };
+    rustdesk-server = {
+      enable = true;
+      openFirewall = true;
+      relayIP = "10.0.0.30";
+    };
     udisks2.enable = true;
   };
   xdg.portal = {
@@ -182,7 +187,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false; # Enable docker containers to access host services
+  # networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
