@@ -26,25 +26,36 @@
 
       # Execute your favorite apps at launch
       # exec-once = waybar & hyprpaper & firefox
-      # exec-once = xprop -root -f _XWAYLAND_GLOBAL_OUTPUT_SCALE 32c -set _XWAYLAND_GLOBAL_OUTPUT_SCALE 1
 
       # Source a file (multi-file configs)
       # source = ~/.config/hypr/myColors.conf
 
+      # Set programs that you use
+      "$terminal" = "wezterm";
+      "$fileManager" = "spacedrive";
+      "$menu" = "wofi --show drun";
+
       # Some default env vars.
       env = [
         "XCURSOR_SIZE,24"
+        "QT_QPA_PLATFORMTHEME,qt5ct" # change to qt6ct if you have that
       ];
 
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
       input = {
         kb_layout = "us";
+        kb_variant = "";
+        kb_model = "";
         kb_options = "caps:escape,altwin:prtsc_rwin";
+        kb_rules = "";
+
         follow_mouse = 1;
-        sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
+
         touchpad = {
           natural_scroll = true;
         };
+
+        sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
       };
 
       general = {
@@ -56,6 +67,9 @@
           "col.inactive_border" = "rgba(595959aa)";
 
           layout = "dwindle";
+
+          # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+          allow_tearing = false;
       };
 
       decoration = {
@@ -66,16 +80,18 @@
             enabled = true;
             size = 3;
             passes = 1;
+
+            vibrancy = 0.1696;
           };
 
-          drop_shadow = "yes";
+          drop_shadow = true;
           shadow_range = 4;
           shadow_render_power = 3;
           "col.shadow" = "rgba(1a1a1aee)";
       };
 
       animations = {
-          enabled = "yes";
+          enabled = true;
 
           # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
@@ -93,8 +109,8 @@
 
       dwindle = {
           # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-          pseudotile = "yes"; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-          preserve_split = "yes"; # you probably want this
+          pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+          preserve_split = true; # you probably want this
       };
 
       master = {
@@ -104,7 +120,12 @@
 
       gestures = {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
-          workspace_swipe = "off";
+          workspace_swipe = false;
+      };
+
+      misc = {
+        # See https://wiki.hyprland.org/Configuring/Variables/ for more
+        force_default_wallpaper = -1; # Set to 0 or 1 to disable the anime mascot wallpapers
       };
 
       # Example per-device config
@@ -148,8 +169,8 @@
       bind = [
         # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
         # Launch
-        "$mainMod, Return, exec, wezterm"
-        "$mainMod, space, exec, wofi --show drun"
+        "$mainMod, Return, exec, $terminal"
+        "$mainMod, space, exec, $menu"
         # take screenshot
         ''CONTROL $mainMod, a, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')''
         "CONTROL $mainMod, s, exec, ${pkgs.grim}/bin/grim -o $(hyprctl -j monitors | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')"
@@ -157,7 +178,7 @@
         "CONTROL $mainMod, r, exec, ${pkgs.wf-recorder}/bin/wf-recorder -o $(hyprctl -j monitors | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') -c h264_vaapi -d /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')"
         "CONTROL $mainMod, BackSpace, exec, ${pkgs.killall}/bin/killall -s SIGINT wf-recorder"
         # lockscreen
-        "CONTROL $mainMod, l, exec, ${pkgs.swaylock}/bin/swaylock -eFki ${pkgs.hyprland}/share/hyprland/wall_4K.png"
+        "CONTROL $mainMod, l, exec, ${pkgs.swaylock}/bin/swaylock -eFki ${pkgs.hyprland}/share/hyprland/wall0.png"
 
         # Focus app window
         "$mainMod, a, focuswindow, ^(Alacritty)$"
