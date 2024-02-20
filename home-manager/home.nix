@@ -16,11 +16,14 @@
       devbox
       du-dust
       fd
+      ghostscript
+      imagemagick
       jq
       ollama
       ripgrep
       skim
       unar
+      unzip
       xh
       zip
       zola
