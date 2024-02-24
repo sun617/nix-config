@@ -130,7 +130,8 @@
 
       # Example per-device config
       # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
-      "device:epic-mouse-v1" = {
+      device = {
+          name = "m585/m590-mouse";
           sensitivity = -0.5;
       };
 
