@@ -32,6 +32,7 @@
     spacedrive
     swappy
     swaylock
+    warp-terminal
     wf-recorder
     wl-clipboard
     wofi

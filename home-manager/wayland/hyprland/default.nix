@@ -31,7 +31,7 @@
       # source = ~/.config/hypr/myColors.conf
 
       # Set programs that you use
-      "$terminal" = "wezterm";
+      "$terminal" = "warp-terminal";
       "$fileManager" = "spacedrive";
       "$menu" = "wofi --show drun";
 
@@ -160,6 +160,7 @@
         "workspace name:slack,class:^(Slack)$"
         "workspace name:spacedrive,class:^(Spacedrive)$"
         "workspace name:telegram,class:^(org.telegram.desktop)$"
+        "workspace name:warp,class:^(dev.warp.Warp)$"
         "workspace name:wezterm,class:^(org.wezfurlong.wezterm)$"
         "workspace name:vscode,class:^(Code)$"
       ];
@@ -192,8 +193,9 @@
         "$mainMod, m, focuswindow, ^(Slack)$"
         "$mainMod, r, focuswindow, ^(RedisInsight-v2)$"
         "$mainMod, s, focuswindow, ^(Spacedrive)$"
-        "$mainMod, t, focuswindow, ^(org.wezfurlong.wezterm)$"
+        "$mainMod, t, focuswindow, ^(dev.warp.Warp)$"
         "$mainMod, v, focuswindow, ^(Code)$"
+        "$mainMod, w, focuswindow, ^(org.wezfurlong.wezterm)$"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
