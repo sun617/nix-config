@@ -3,6 +3,7 @@
 {
   # fonts
   fonts.packages = with pkgs; [
+    hack-font # for warp-terminal
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
