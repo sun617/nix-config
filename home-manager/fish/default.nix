@@ -1,7 +1,7 @@
 {
   imports = [
     ./direnv.nix
-    ./exa.nix
+    ./eza.nix
     ./starship.nix
     ./zoxide.nix
   ];
