@@ -36,6 +36,7 @@
     ./docker-compose.nix
     ./fish
     ./git.nix
+    ./google-cloud-sdk.nix
     ./helix.nix
     ./lsp-servers.nix
     ./wayland
