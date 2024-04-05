@@ -18,10 +18,12 @@
       fd
       ghostscript
       imagemagick
+      jnv
       jq
       ollama
       ripgrep
       skim
+      usbutils
       unar
       unzip
       xh
