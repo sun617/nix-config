@@ -26,6 +26,7 @@
     grim
     imv
     killall
+    maestral-gui
     light
     playerctl
     slurp
