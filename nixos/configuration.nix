@@ -153,23 +153,23 @@
       alsa.enable = true;
       pulse.enable = true;
     };
-    rustdesk-server = {
-      enable = true;
-      openFirewall = true;
-      relayIP = "10.0.0.30";
-    };
-    samba = {
-      enable = true;
-      openFirewall = true;
-      shares = {
-        private = {
-          path = "/home/sun/workspace/share";
-          "read only" = false;
-          browseable = "yes";
-          "guest ok" = "no";
-        };
-      };
-    };
+    # rustdesk-server = {
+    #   enable = true;
+    #   openFirewall = true;
+    #   relayIP = "10.0.0.30";
+    # };
+    # samba = {
+    #   enable = true;
+    #   openFirewall = true;
+    #   shares = {
+    #     private = {
+    #       path = "/home/sun/workspace/share";
+    #       "read only" = false;
+    #       browseable = "yes";
+    #       "guest ok" = "no";
+    #     };
+    #   };
+    # };
     udisks2.enable = true;
   };
   xdg.portal = {

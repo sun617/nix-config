@@ -10,7 +10,7 @@
     ./mpv.nix
     ./network-manager-applet.nix
     ./swayidle.nix
-    ./syncthing.nix
+    # ./syncthing.nix
     ./udiskie.nix
     ./vscode.nix
     ./wezterm.nix
