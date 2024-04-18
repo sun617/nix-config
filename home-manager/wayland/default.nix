@@ -29,6 +29,7 @@
     maestral-gui
     light
     playerctl
+    pwvucontrol
     slurp
     spacedrive
     swappy
