@@ -37,8 +37,9 @@
 
       # Some default env vars.
       env = [
-        "XCURSOR_SIZE,24"
+        "LD_LIBRARY_PATH,${pkgs.wayland}/lib" # https://github.com/NixOS/nixpkgs/pull/301944#issuecomment-2076070174
         "QT_QPA_PLATFORMTHEME,qt5ct" # change to qt6ct if you have that
+        "XCURSOR_SIZE,24"
       ];
 
       # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
