@@ -127,6 +127,7 @@
             car = "";
             default = [ "" "" "" ];
           };
+          on-click = "pwvucontrol";
         };
       };
     };

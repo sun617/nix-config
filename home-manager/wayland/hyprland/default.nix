@@ -145,10 +145,12 @@
         "name:slack, monitor:eDP-1"
       ];
       windowrulev2 = [
+        "float,class:^(.blueman-manager-wrapped)$"
+        "float,class:^(com.saivert.pwvucontrol)$"
+        "float,class:^(imv)$"
+        "float,class:^(org.fcitx.)$"
         "float,class:^(org.mozilla.firefox)$,title:^(Picture-in-Picture)$"
         "float,class:^(org.mozilla.firefox)$,title:^(Firefox — Sharing Indicator)$"
-        "float,class:^(org.fcitx.)$"
-        "float,class:^(imv)$"
         "workspace name:alacritty,class:^(Alacritty)$"
         "workspace name:cursor,class:^(Cursor)$"
         "workspace name:chrome,class:^(google-chrome)$"
