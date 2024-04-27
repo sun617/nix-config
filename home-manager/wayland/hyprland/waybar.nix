@@ -73,7 +73,8 @@
           tooltip = false;
         };
         memory = {
-          format = "{}% ";
+          interval = 30;
+          format = "{used:0.1f}G/{total:0.1f}G ";
         };
         temperature = {
           # thermal-zone = 2;
@@ -127,7 +128,7 @@
             car = "";
             default = [ "" "" "" ];
           };
-          on-click = "pwvucontrol";
+          on-click = "${pkgs.pwvucontrol}/bin/pwvucontrol";
         };
       };
     };

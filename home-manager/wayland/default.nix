@@ -23,20 +23,11 @@
     appimage-run
     ffmpeg
     gnome.seahorse
-    grim
     imv
-    killall
     maestral-gui
-    light
-    playerctl
-    pwvucontrol
-    slurp
     spacedrive
     swappy
-    swaylock
     warp-terminal
-    wf-recorder
-    wl-clipboard
     wofi
   ];
 }
