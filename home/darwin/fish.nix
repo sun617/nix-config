@@ -8,8 +8,9 @@
       # darwin-rebuild
       ds = "darwin-rebuild switch --flake .#mac1";
     };
-    loginShellInit = ''
-      source (/opt/homebrew/bin/brew shellenv)
+    
+    interactiveShellInit = ''
+      eval (/opt/homebrew/bin/brew shellenv)
     '';
   };
 }
