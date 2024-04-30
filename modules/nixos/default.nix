@@ -2,12 +2,12 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ pkgs, nixpkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
     [
-      # Include fonts and icons configurations
+      ../nix
       ./fonts-and-icons.nix
     ];
 
@@ -18,27 +18,6 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
-
-  nix = {
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-    registry = {
-      nixpkgs.flake = nixpkgs;
-    };
-    settings = {
-      substituters = [
-        "https://devenv.cachix.org"
-        "https://helix.cachix.org"
-        "https://hyprland.cachix.org"
-      ];
-      trusted-public-keys = [
-        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-        "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      ];
-    };
-  };
 
   # Set your time zone.
   time.timeZone = "Asia/Tokyo";

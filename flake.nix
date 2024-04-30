@@ -69,6 +69,8 @@
           modules = [
             ./hosts/mac1
           ];
+
+          specialArgs = { inherit nixpkgs; };
         };
       };
 
