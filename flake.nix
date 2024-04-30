@@ -8,6 +8,10 @@
     # NixOS hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+    # Nix Darwin
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -19,13 +23,13 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { nixpkgs, nixos-hardware, home-manager, helix, hyprland, ... }:
+  outputs = { nixpkgs, nixos-hardware, nix-darwin, home-manager, helix, hyprland, ... }:
     let
       inherit (nixpkgs.lib) nixosSystem;
+      inherit (nix-darwin.lib) darwinSystem;
       inherit (home-manager.lib) homeManagerConfiguration;
 
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
+      pkgsForSystem = system: import nixpkgs {
         inherit system;
         config = {
           allowUnfree = true;
@@ -38,11 +42,15 @@
     in
     {
       nixosConfigurations = {
-        x1c9 = nixosSystem {
-          inherit pkgs system;
+        x1c9 = let
+          system = "x86_64-linux";
+        in 
+        nixosSystem {
+          inherit system;
+          pkgs = pkgsForSystem system;
 
           modules = [
-            ./nixos/configuration.nix
+            ./hosts/x1c9
             nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
           ];
 
@@ -50,20 +58,47 @@
         };
       };
 
-      homeConfigurations = {
-        sun = homeManagerConfiguration {
-          inherit pkgs;
+      darwinConfigurations = {
+        mac1 = let
+          system = "aarch64-darwin";
+        in
+        darwinSystem {
+          inherit system;
+          pkgs = pkgsForSystem system;
+
           modules = [
-            ./home-manager/home.nix
+            ./hosts/mac1
           ];
         };
       };
 
-      devShells.${system}.default = with pkgs; mkShellNoCC {
-        packages = [
-          home-manager
-        ];
+      homeConfigurations = {
+        x1c9 = let 
+          system = "x86_64-linux";
+        in  
+        homeManagerConfiguration {
+          pkgs = pkgsForSystem system;
+          modules = [
+            ./home/linux
+          ];
+        };
+
+        mac1 = let 
+          system = "aarch64-darwin";
+        in
+        homeManagerConfiguration {
+          pkgs = pkgsForSystem system;
+          modules = [
+            ./home/darwin
+          ];
+        };
       };
+
+      # devShells.${system}.default = with pkgs; mkShellNoCC {
+      #   packages = [
+      #     home-manager
+      #   ];
+      # };
 
       templates = {
         go = {
