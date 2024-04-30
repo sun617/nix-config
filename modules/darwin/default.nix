@@ -1,8 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ../nix
+  ];
+
+  # Add to /etc/shells
+  environment.shells = [
+    pkgs.fish 
   ];
   
   # List packages installed in system profile. To search by name, run:
