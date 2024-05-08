@@ -1,11 +1,6 @@
-{
-  imports = [
-    ./direnv.nix
-    ./eza.nix
-    ./starship.nix
-    ./zoxide.nix
-  ];
+{ ... }:
 
+{
   programs.fish = {
     enable = true;
     shellAbbrs = {
@@ -27,8 +22,7 @@
       fu = "flatpak update";
       fU = "flatpak uninstall";
       # home-manager
-      h = "home-manager";
-      hs = "home-manager switch --flake .";
+      hs = "home-manager switch --flake .#x1c9";
       # nixos-rebuild
       ns = "sudo nixos-rebuild switch --flake .";
       # systemctl

@@ -1,10 +1,8 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home = {
-    username = "sun";
-    homeDirectory = "/home/sun";
-    stateVersion = "22.11";
+    stateVersion = "23.11";
     sessionVariables = {
       EDITOR = "hx";
     };
@@ -13,8 +11,6 @@
       bat
       bottom
       curl
-      devenv
-      devbox
       du-dust
       fd
       ghostscript
@@ -23,8 +19,6 @@
       jq
       ollama
       ripgrep
-      skim
-      usbutils
       unar
       unzip
       xh
@@ -42,8 +36,6 @@
     ./google-cloud-sdk.nix
     ./helix.nix
     ./lsp-servers.nix
-    ./wayland
-    ./wireplumber.nix
     ./yazi.nix
   ];
 
