@@ -33,4 +33,35 @@
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
+
+  homebrew = {
+    enable = true;
+    casks = [
+      "arc"
+      "cursor"
+      "dbeaver-community"
+      "docker"
+      "google-japanese-ime"
+      "obsidian"
+      "rectangle"
+      "stats"
+      "warp"
+      "zed"
+    ];
+    masApps = {
+      Manico = 724472954;
+    };
+  };
+
+  system.defaults = {
+    dock = {
+      autohide = true;
+      orientation = "right";
+    };
+    NSGlobalDomain = {
+      "com.apple.keyboard.fnState" = true;
+      "com.apple.mouse.tapBehavior" = 1;
+      "com.apple.swipescrolldirection" = false;
+    };
+  };
 }
