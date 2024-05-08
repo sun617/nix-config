@@ -37,5 +37,5 @@
       sul = "systemctl --user list-dependencies";
       sus = "systemctl --user status";
     };
-  };  
+  };
 }
