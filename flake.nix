@@ -96,13 +96,12 @@
         };
       };
 
-      # devShells.${system}.default = with pkgs; mkShellNoCC {
-      #   packages = [
-      #     home-manager
-      #   ];
-      # };
-
       templates = {
+        flutter = {
+          path = ./templates/flutter;
+          description = "Flutter development environment";
+        };
+
         go = {
           path = ./templates/go;
           description = "Go development environment";
@@ -113,14 +112,19 @@
           description = "Node development environment";
         };
 
+        php = {
+          path = ./templates/php;
+          description = "PHP development environment";
+        };
+
+        ruby = {
+          path = ./templates/ruby;
+          description = "Ruby development environment";
+        };
+
         rust = {
           path = ./templates/rust;
           description = "Rust development environment";
-        };
-
-        flutter = {
-          path = ./templates/flutter;
-          description = "Flutter development environment";
         };
       };
     };
