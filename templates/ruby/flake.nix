@@ -29,6 +29,8 @@
         devShells.default = with pkgs; mkShellNoCC {
           buildInputs = [
             pkgs."ruby-3.0.3"
+            pkg-config
+            openssl
             libmysqlclient
           ];
         };
