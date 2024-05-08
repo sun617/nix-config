@@ -11,8 +11,6 @@
       bat
       bottom
       curl
-      devenv
-      devbox
       du-dust
       fd
       ghostscript
