@@ -25,6 +25,13 @@
         devShells.default = with pkgs; mkShellNoCC {
           buildInputs = [
             pinnedPkgs.nodejs
+            nodePackages."@tailwindcss/language-server"
+            # https://github.com/NixOS/nixpkgs/pull/259042
+            nodePackages."@vue/language-server"
+            nodePackages.prettier
+            nodePackages.typescript-language-server
+            nodePackages.vscode-langservers-extracted
+            nodePackages.yaml-language-server
           ];
         };
       }

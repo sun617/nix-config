@@ -20,6 +20,7 @@
           buildInputs = [
             gcc
             rustup
+            rust-analyzer
           ];
         };
       }

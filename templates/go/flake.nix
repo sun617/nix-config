@@ -19,6 +19,7 @@
         devShells.default = with pkgs; mkShellNoCC {
           buildInputs = [
             go
+            gopls
             delve
             go-tools
             goose
