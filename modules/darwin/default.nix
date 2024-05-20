@@ -4,6 +4,10 @@
   imports = [
     ../nix
   ];
+  nix.gc.interval = {
+    Hour = 12;
+    Minute = 0;
+  };
 
   # Add to /etc/shells
   environment.shells = [

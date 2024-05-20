@@ -10,7 +10,8 @@
       ../nix
       ./fonts-and-icons.nix
     ];
-
+  nix.gc.dates = "weekly";
+  
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
