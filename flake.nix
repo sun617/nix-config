@@ -18,12 +18,9 @@
 
     # helix
     helix.url = "github:helix-editor/helix";
-
-    # hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { nixpkgs, nixos-hardware, nix-darwin, home-manager, helix, hyprland, ... }:
+  outputs = { nixpkgs, nixos-hardware, nix-darwin, home-manager, helix, ... }:
     let
       inherit (nixpkgs.lib) nixosSystem;
       inherit (nix-darwin.lib) darwinSystem;
@@ -36,7 +33,6 @@
         };
         overlays = [
           (_: _: { helix = helix.packages.${system}.default; })
-          (_: _: { hyprland = hyprland.packages.${system}.hyprland; })
         ];
       };
     in
