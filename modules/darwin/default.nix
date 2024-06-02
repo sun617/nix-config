@@ -42,12 +42,14 @@
     enable = true;
     casks = [
       "arc"
+      "bruno"
       "cursor"
       "dbeaver-community"
       "docker"
       "google-japanese-ime"
       "obsidian"
       "rectangle"
+      "spacedrive"
       "stats"
       "warp"
       "zed"
