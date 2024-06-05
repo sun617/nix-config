@@ -45,7 +45,8 @@
           { key = 'K', mods = 'LEADER', action = act.SwitchWorkspaceRelative(1) },
           { key = 'J', mods = 'LEADER', action = act.SwitchWorkspaceRelative(-1) },
         },
-        enable_wayland = true
+        -- https://github.com/wez/wezterm/pull/5264
+        enable_wayland = false
       }
     '';
   };
