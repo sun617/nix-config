@@ -12,14 +12,10 @@
       bottom
       curl
       du-dust
-      fd
       ghostscript
       imagemagick
       jnv
-      jq
       ollama
-      ripgrep
-      unar
       unzip
       xh
       zip
