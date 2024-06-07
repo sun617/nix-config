@@ -20,16 +20,16 @@
         fenixStable = fenix.packages.${system}.stable.withComponents [
           "cargo"
           "clippy"
+          "rust-src"
           "rust-std"
           "rustc"
           "rustfmt"
         ];
       in
       {
-        devShells.default = with pkgs; mkShellNoCC {
+        devShells.default = with pkgs; mkShell {
           nativeBuildInputs = [
             fenixStable
-            # gcc
             # pkg-config
             # openssl
             rust-analyzer
