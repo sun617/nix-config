@@ -18,9 +18,16 @@
 
     # helix
     helix.url = "github:helix-editor/helix";
+
+    # hyprland
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
+    # Hyprspace
+    Hyprspace.url = "github:KZDKM/Hyprspace";
+    Hyprspace.inputs.hyprland.follows = "hyprland";
   };
 
-  outputs = { nixpkgs, nixos-hardware, nix-darwin, home-manager, helix, ... }:
+  outputs = { nixpkgs, nixos-hardware, nix-darwin, home-manager, helix, hyprland, ... }@inputs:
     let
       inherit (nixpkgs.lib) nixosSystem;
       inherit (nix-darwin.lib) darwinSystem;
@@ -33,6 +40,7 @@
         };
         overlays = [
           (_: _: { helix = helix.packages.${system}.default; })
+          (_: _: { hyprland = hyprland.packages.${system}.hyprland; })
         ];
       };
     in
@@ -79,6 +87,7 @@
           modules = [
             ./home/linux
           ];
+          extraSpecialArgs = { inherit inputs; };
         };
 
         mac1 = let 
