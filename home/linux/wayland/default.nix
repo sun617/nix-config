@@ -22,7 +22,7 @@
   home.packages = with pkgs; [
     appimage-run
     ffmpeg
-    gnome.seahorse
+    seahorse
     imv
     maestral-gui
     spacedrive

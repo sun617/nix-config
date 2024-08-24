@@ -45,8 +45,9 @@
           { key = 'K', mods = 'LEADER', action = act.SwitchWorkspaceRelative(1) },
           { key = 'J', mods = 'LEADER', action = act.SwitchWorkspaceRelative(-1) },
         },
-        -- https://github.com/wez/wezterm/pull/5264
-        enable_wayland = false
+        -- https://github.com/wez/wezterm/issues/5990#issuecomment-2305416553
+        front_end = 'WebGpu',
+        enable_wayland = false,
       }
     '';
   };

@@ -5,7 +5,7 @@
     enable = true;
     iconTheme = {
       # For input method tray icon
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.adwaita-icon-theme;
       name = "hicolor";
     };
   };
