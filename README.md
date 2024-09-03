@@ -11,7 +11,4 @@ nix store gc --verbose # or nix-collect-garbase --delete-old
 nix flake update
 sudo nixos-rebuild switch --flake .
 home-manager switch --flake .
-
-# update helix
-nix flake lock --update-input helix
 ```

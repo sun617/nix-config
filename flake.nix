@@ -16,9 +16,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # helix
-    helix.url = "github:helix-editor/helix";
-
     # hyprland
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
@@ -27,7 +24,7 @@
     Hyprspace.inputs.hyprland.follows = "hyprland";
   };
 
-  outputs = { nixpkgs, nixos-hardware, nix-darwin, home-manager, helix, hyprland, ... }@inputs:
+  outputs = { nixpkgs, nixos-hardware, nix-darwin, home-manager, hyprland, ... }@inputs:
     let
       inherit (nixpkgs.lib) nixosSystem;
       inherit (nix-darwin.lib) darwinSystem;
@@ -39,7 +36,6 @@
           allowUnfree = true;
         };
         overlays = [
-          (_: _: { helix = helix.packages.${system}.default; })
           (_: _: { hyprland = hyprland.packages.${system}.hyprland; })
         ];
       };
