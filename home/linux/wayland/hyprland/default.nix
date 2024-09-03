@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -15,11 +15,7 @@
     enable = true;
 
     plugins = [
-      # inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
-      # https://github.com/KZDKM/Hyprspace/issues/79#issuecomment-2303964625
-      (inputs.Hyprspace.packages.${pkgs.system}.Hyprspace.overrideAttrs ( finalAttrs: previousAttrs:{
-        nativeBuildInputs = with pkgs; [ meson ] ++ previousAttrs.nativeBuildInputs; 
-      }))
+      # pkgs.hyprlandPlugins.hyprspace
     ];
 
     settings = {
