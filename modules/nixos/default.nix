@@ -109,16 +109,10 @@
     DefaultEnvironment="PATH=/home/sun/.nix-profile/bin:/run/current-system/sw/bin"
   '';
 
-  # cloudflare-warp
-  # https://github.com/NixOS/nixpkgs/issues/213177#issuecomment-1905556283
-  environment.systemPackages = [ pkgs.cloudflare-warp ];
-  systemd.packages = [ pkgs.cloudflare-warp ];
-  systemd.targets.multi-user.wants = [ "warp-svc.service" ]; # causes warp-svc to be started automatically
-
   # List services that you want to enable:
-
   services = {
     blueman.enable = true;
+    cloudflare-warp.enable = true;
     flatpak.enable = true;
     gnome.gnome-keyring.enable = true;
     logind.lidSwitchDocked = "suspend";
@@ -169,7 +163,6 @@
     libvirtd.enable = true;
   };
 
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
@@ -188,5 +181,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
