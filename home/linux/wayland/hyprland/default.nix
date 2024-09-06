@@ -15,7 +15,7 @@
     enable = true;
 
     plugins = [
-      # pkgs.hyprlandPlugins.hyprspace
+      pkgs.hyprlandPlugins.hyprspace
     ];
 
     settings = {
