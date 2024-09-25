@@ -21,6 +21,7 @@
 
   home.packages = with pkgs; [
     appimage-run
+    code-cursor
     ffmpeg
     seahorse
     imv
