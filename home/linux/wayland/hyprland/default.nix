@@ -2,6 +2,8 @@
 
 {
   imports = [
+    ./hypridle.nix
+    ./hyprlock.nix
     ./waybar.nix
   ];
 
@@ -202,7 +204,7 @@
         "ALT_SHIFT, 5, exec, ${pkgs.wf-recorder}/bin/wf-recorder -o $(hyprctl -j monitors | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') -c h264_vaapi -d /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')"
         "CONTROL_ALT, Escape, exec, ${pkgs.killall}/bin/killall -s SIGINT wf-recorder"
         # lockscreen
-        "CONTROL_ALT, q, exec, ${pkgs.swaylock}/bin/swaylock -eFki ${pkgs.hyprland}/share/hyprland/wall0.png"
+        "CONTROL_ALT, q, exec, hyprlock"
 
         # Focus app window
         "$mainMod, a, focuswindow, ^(bruno)$"

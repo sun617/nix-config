@@ -9,7 +9,6 @@
     ./mako.nix
     ./mpv.nix
     ./network-manager-applet.nix
-    ./swayidle.nix
     # ./syncthing.nix
     ./udiskie.nix
     ./vscode.nix

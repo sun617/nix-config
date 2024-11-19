@@ -99,6 +99,7 @@
     ssh.startAgent = true;
     # sway.enable = true;
     hyprland.enable = true;
+    hyprlock.enable = true;
     clash-verge = {
       enable = true;
       package = pkgs.clash-verge-rev;
@@ -116,9 +117,6 @@
     };
     wantedBy = [ "multi-user.target" ];
   };
-  # For use swaylock in Hyprland
-  # https://github.com/NixOS/nixpkgs/blob/ded926ce93dc121d245233a97855e5be0fc6a7f5/nixos/modules/programs/wayland/wayland-session.nix#L4
-  security.pam.services.swaylock = {};
 
   # https://github.com/NixOS/nixpkgs/issues/189851#issuecomment-1238907955
   systemd.user.extraConfig = ''
