@@ -26,6 +26,7 @@
     seahorse
     imv
     maestral-gui
+    nwg-displays
     spacedrive
     swappy
     warp-terminal

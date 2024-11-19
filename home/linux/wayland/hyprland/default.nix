@@ -24,10 +24,10 @@
       ################
 
       # See https://wiki.hyprland.org/Configuring/Monitors/
-      # monitor=,preferred,auto,auto
-      monitor = [
-        "DP-3,preferred,0x0,1"
-        "eDP-1,preferred,3840x540,1"
+      # See https://github.com/nwg-piotr/nwg-displays
+      source = [
+        "~/.config/hypr/monitors.conf"
+        "~/.config/hypr/workspaces.conf"
       ];
 
       ###################
@@ -305,10 +305,10 @@
 
       # Example windowrule v1
       # windowrule = float, ^(kitty)$
-      workspace = [
-        "name:firefox, monitor:DP-3"
-        "name:slack, monitor:eDP-1"
-      ];
+      # workspace = [
+      #   "name:firefox, monitor:DP-3"
+      #   "name:slack, monitor:eDP-1"
+      # ];
       # Example windowrule v2
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       windowrulev2 = [
