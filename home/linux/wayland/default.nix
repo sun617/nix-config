@@ -15,7 +15,6 @@
     ./wezterm.nix
     ./xdg.nix
     ./hyprland
-    # ./sway
   ];
 
   home.packages = with pkgs; [

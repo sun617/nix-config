@@ -97,7 +97,6 @@
   programs = {
     fish.enable = true;
     ssh.startAgent = true;
-    # sway.enable = true;
     hyprland.enable = true;
     hyprlock.enable = true;
     clash-verge = {
