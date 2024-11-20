@@ -30,18 +30,12 @@
             active = "";
             default = "";
 
-            bruno = "󰩃";
-            chrome = "";
-            cursor = "";
-            database = "";
-            spacedrive = "";
-            edge = "󰇩";
-            firefox = "";
-            redis = "";
-            slack = "󰒱";
-            telegram = "";
-            vscode = "󰨞";
-            warp = "";
+            Browser = "";
+            Chat = "󰒱";
+            Database = "";
+            Editor = "󰨞";
+            FileManager = "";
+            Terminal = "";
           };
         };
         "hyprland/window" = {

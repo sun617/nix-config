@@ -206,32 +206,18 @@
         # lockscreen
         "CONTROL_ALT, q, exec, hyprlock"
 
-        # Focus app window
-        "$mainMod, a, focuswindow, ^(bruno)$"
-        "$mainMod, b, focuswindow, ^(org.mozilla.firefox)$"
-        "$mainMod, c, focuswindow, ^(Code)$"
-        "$mainMod, d, focuswindow, ^(DBeaver)$"
-        "$mainMod, e, focuswindow, ^(Cursor)$"
-        "$mainMod, f, focuswindow, ^(spacedrive)$"
-        "$mainMod, m, focuswindow, ^(Slack)$"
-        "$mainMod, r, focuswindow, ^(RedisInsight-v2)$"
-        "$mainMod, t, focuswindow, ^(dev.warp.Warp)$"
-        "$mainMod, w, focuswindow, ^(org.wezfurlong.wezterm)$"
-        "$mainMod SHIFT, a, focuswindow, ^(Alacritty)$"
-        "$mainMod SHIFT, c, focuswindow, ^(google-chrome)$"
-        "$mainMod SHIFT, e, focuswindow, ^(Microsoft-edge)$"
-
-        # Move focus with mainMod + arrow keys
-        "$mainMod, left, movefocus, l"
-        "$mainMod, right, movefocus, r"
-        "$mainMod, up, movefocus, u"
-        "$mainMod, down, movefocus, d"
-        # Move focus with mainMod + hjkl
+        # Move focus
         "$mainMod, h, movefocus, l"
         "$mainMod, j, movefocus, d"
         "$mainMod, k, movefocus, u"
         "$mainMod, l, movefocus, r"
-        # Switch workspaces with mainMod + [0-9]
+        # Change workspaces
+        "$mainMod, b, workspace, name:Browser"
+        "$mainMod, c, workspace, name:Chat"
+        "$mainMod, d, workspace, name:Database"
+        "$mainMod, e, workspace, name:Editor"
+        "$mainMod, f, workspace, name:FileManager"
+        "$mainMod, t, workspace, name:Terminal"
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -242,15 +228,16 @@
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
-        # Scroll through existing workspaces with mainMod + scroll
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
-        # Switch next or previous existing workspaces with mainMod + [np]
-        "$mainMod, n, workspace, e+1"
-        "$mainMod, p, workspace, e-1"
+        "$mainMod, n, workspace, m+1"
+        "$mainMod, p, workspace, m-1"
         "$mainMod, backslash, workspace, previous"
-
-        # Move active window to a workspace with mainMod + SHIFT + [0-9]
+        # Move active window to a workspace
+        "$mainMod SHIFT, b, movetoworkspace, name:Browser"
+        "$mainMod SHIFT, c, movetoworkspace, name:Chat"
+        "$mainMod SHIFT, d, movetoworkspace, name:Database"
+        "$mainMod SHIFT, e, movetoworkspace, name:Editor"
+        "$mainMod SHIFT, f, movetoworkspace, name:FileManager"
+        "$mainMod SHIFT, t, movetoworkspace, name:Terminal"
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
         "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -261,15 +248,19 @@
         "$mainMod SHIFT, 8, movetoworkspace, 8"
         "$mainMod SHIFT, 9, movetoworkspace, 9"
         "$mainMod SHIFT, 0, movetoworkspace, 10"
-        # Move active window to next or previous existing workspaces with mainMod + SHIFT + [np]
-        "$mainMod SHIFT, n, movetoworkspace, e+1"
-        "$mainMod SHIFT, p, movetoworkspace, e-1"
+        "$mainMod SHIFT, n, movetoworkspace, m+1"
+        "$mainMod SHIFT, p, movetoworkspace, m-1"
         "$mainMod SHIFT, backslash, movetoworkspace, previous"
-        # Move active window in a direction
+        # Move active window
         "$mainMod SHIFT, h, movewindow, l"
         "$mainMod SHIFT, j, movewindow, d"
         "$mainMod SHIFT, k, movewindow, u"
         "$mainMod SHIFT, l, movewindow, r"
+        # Move current workspace to a direction
+        "$mainMod SHIFT ALT, h, movecurrentworkspacetomonitor, l"
+        "$mainMod SHIFT ALT, j, movecurrentworkspacetomonitor, d"
+        "$mainMod SHIFT ALT, k, movecurrentworkspacetomonitor, u"
+        "$mainMod SHIFT ALT, l, movecurrentworkspacetomonitor, r"
 
         # Dispatchers
         "$mainMod ALT, e, exit"
@@ -320,20 +311,12 @@
         "float,class:^(org.fcitx.)$"
         "float,class:^(org.mozilla.firefox)$,title:^(Picture-in-Picture)$"
         "float,class:^(org.mozilla.firefox)$,title:^(Firefox — Sharing Indicator)$"
-        "workspace name:alacritty,class:^(Alacritty)$"
-        "workspace name:bruno,class:^(bruno)$"
-        "workspace name:cursor,class:^(Cursor)$"
-        "workspace name:chrome,class:^(google-chrome)$"
-        "workspace name:database,class:^(DBeaver)$"
-        "workspace name:edge,class:^(Microsoft-edge)$"
-        "workspace name:firefox,class:^(org.mozilla.firefox)$"
-        "workspace name:redis,class:^(RedisInsight)$"
-        "workspace name:slack,class:^(Slack)$"
-        "workspace name:spacedrive,class:^(spacedrive)$"
-        "workspace name:telegram,class:^(org.telegram.desktop)$"
-        "workspace name:warp,class:^(dev.warp.Warp)$"
-        "workspace name:wezterm,class:^(org.wezfurlong.wezterm)$"
-        "workspace name:vscode,class:^(Code)$"
+        "workspace name:Browser,class:^(org.mozilla.firefox)$"
+        "workspace name:Chat,class:^(Slack)$"
+        "workspace name:Database,class:^(DBeaver)$"
+        "workspace name:Editor,class:^(Cursor)$"
+        "workspace name:FileManager,class:^(spacedrive)$"
+        "workspace name:Terminal,class:^(dev.warp.Warp)$"
       ];
     };
   };
