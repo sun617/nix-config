@@ -130,11 +130,13 @@
       alsa.enable = true;
       pulse.enable = true;
     };
-    # rustdesk-server = {
-    #   enable = true;
-    #   openFirewall = true;
-    #   relayIP = "10.0.0.30";
-    # };
+    rustdesk-server = {
+      enable = true;
+      openFirewall = true;
+      signal.relayHosts = [
+        "relay.rustdesk.local"
+      ];
+    };
     # samba = {
     #   enable = true;
     #   openFirewall = true;
