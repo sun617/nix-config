@@ -41,7 +41,7 @@
       # Set programs that you use
       "$terminal" = "warp-terminal";
       "$fileManager" = "spacedrive";
-      "$menu" = "wofi --show drun";
+      "$menu" = "rofi -show combi";
 
       #################
       ### AUTOSTART ###

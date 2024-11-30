@@ -9,6 +9,7 @@
     ./mako.nix
     ./mpv.nix
     ./network-manager-applet.nix
+    ./rofi.nix
     # ./syncthing.nix
     ./udiskie.nix
     ./vscode.nix
@@ -28,6 +29,5 @@
     spacedrive
     swappy
     warp-terminal
-    wofi
   ];
 }
