@@ -9,7 +9,7 @@
     noto-fonts-cjk-serif
     noto-fonts-emoji
     font-awesome_6
-    (nerdfonts.override { fonts = [ "Hack" ]; })
+    nerd-fonts.hack
   ];
   # icons
   environment.systemPackages = let
