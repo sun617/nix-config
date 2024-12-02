@@ -10,7 +10,6 @@
     };
     gc = {
       automatic = true;
-      # https://github.com/NixOS/nix/pull/5002
       options = "--delete-older-than 10d";
     };
   };

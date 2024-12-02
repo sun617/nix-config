@@ -32,6 +32,7 @@
     ./google-cloud-sdk.nix
     ./helix.nix
     ./lsp-servers.nix
+    ./nix-gc.nix
     ./yazi.nix
   ];
 

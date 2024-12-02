@@ -10,7 +10,12 @@
       ../nix
       ./fonts-and-icons.nix
     ];
-  nix.gc.dates = "weekly";
+
+  nix.gc = {
+    dates = "22:00";
+    randomizedDelaySec = "10min";
+    persistent = true;
+  };
   
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
