@@ -175,6 +175,7 @@
       };
     };
     libvirtd.enable = true;
+    waydroid.enable = true;
   };
 
   # Open ports in the firewall.
