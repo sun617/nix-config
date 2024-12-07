@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -29,5 +29,6 @@
     spacedrive
     swappy
     warp-terminal
+    zed-editor
   ];
 }
