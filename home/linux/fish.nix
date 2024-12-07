@@ -6,36 +6,24 @@
     shellAbbrs = {
       # docker
       d = "docker";
-      da = "docker attach";
-      dC = "docker container";
       di = "docker image";
-      dv = "docker volume";
+      de = "docker exec -it";
+      dp = "docker ps";
       dr = "docker run --rm -it";
+      dv = "docker volume";
       # flatpak
       f = "flatpak";
-      fi = "flatpak info";
-      fip = "flatpak info --show-permissions";
       fI = "flatpak install flathub";
-      fl = "flatpak list";
-      fo = "flatpak override";
       fs = "flatpak search";
       fu = "flatpak update";
-      fU = "flatpak uninstall";
-      # home-manager
-      hs = "home-manager switch --flake .#x1c9";
-      # nixos-rebuild
-      ns = "sudo nixos-rebuild switch --flake .";
       # systemctl
       s = "systemctl";
-      sc = "systemctl cat";
-      se = "systemctl enable";
-      sl = "systemctl list-dependencies";
       ss = "systemctl status";
       su = "systemctl --user";
-      suc = "systemctl --user cat";
-      sue = "systemctl --user enable";
-      sul = "systemctl --user list-dependencies";
       sus = "systemctl --user status";
+      # journalctl
+      j = "journalctl --pager-end";
+      ju = "journalctl --user --pager-end";
     };
   };
 }
