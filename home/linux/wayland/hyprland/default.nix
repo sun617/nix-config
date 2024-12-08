@@ -41,7 +41,6 @@
       # Set programs that you use
       "$terminal" = "warp-terminal";
       "$fileManager" = "spacedrive";
-      "$menu" = "rofi -show combi";
 
       #################
       ### AUTOSTART ###
@@ -60,10 +59,10 @@
 
       # See https://wiki.hyprland.org/Configuring/Environment-variables/
       env = [
-        "LD_LIBRARY_PATH,${pkgs.wayland}/lib" # https://github.com/NixOS/nixpkgs/pull/301944#issuecomment-2076070174
-        "QT_QPA_PLATFORMTHEME,qt5ct" # change to qt6ct if you have that
         "XCURSOR_SIZE,24"
+        "QT_QPA_PLATFORMTHEME,qt5ct" # change to qt6ct if you have that
         "WARP_ENABLE_WAYLAND,1"
+        "LD_LIBRARY_PATH,${pkgs.wayland}/lib" # https://github.com/NixOS/nixpkgs/pull/301944#issuecomment-2076070174
       ];
 
       #####################
@@ -123,17 +122,43 @@
 
         # Default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        bezier = [
+          "easeOutQuint,0.23,1,0.32,1"
+          "easeInOutCubic,0.65,0.05,0.36,1"
+          "linear,0,0,1,1"
+          "almostLinear,0.5,0.5,0.75,1.0"
+          "quick,0.15,0,0.1,1"
+        ];
 
         animation = [
-          "windows, 1, 7, myBezier"
-          "windowsOut, 1, 7, default, popin 80%"
-          "border, 1, 10, default"
-          "borderangle, 1, 8, default"
-          "fade, 1, 7, default"
-          "workspaces, 1, 6, default"
+          "global, 1, 10, default"
+          "border, 1, 5.39, easeOutQuint"
+          "windows, 1, 4.79, easeOutQuint"
+          "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
+          "windowsOut, 1, 1.49, linear, popin 87%"
+          "fadeIn, 1, 1.73, almostLinear"
+          "fadeOut, 1, 1.46, almostLinear"
+          "fade, 1, 3.03, quick"
+          "layers, 1, 3.81, easeOutQuint"
+          "layersIn, 1, 4, easeOutQuint, fade"
+          "layersOut, 1, 1.5, linear, fade"
+          "fadeLayersIn, 1, 1.79, almostLinear"
+          "fadeLayersOut, 1, 1.39, almostLinear"
+          "workspaces, 1, 1.94, almostLinear, fade"
+          "workspacesIn, 1, 1.21, almostLinear, fade"
+          "workspacesOut, 1, 1.94, almostLinear, fade"
         ];
       };
+
+      # Ref https://wiki.hyprland.org/Configuring/Workspace-Rules/
+      # "Smart gaps" / "No gaps when only"
+      # uncomment all if you wish to use that.
+      # workspace = w[tv1], gapsout:0, gapsin:0
+      # workspace = f[1], gapsout:0, gapsin:0
+      # windowrulev2 = bordersize 0, floating:0, onworkspace:w[tv1]
+      # windowrulev2 = rounding 0, floating:0, onworkspace:w[tv1]
+      # windowrulev2 = bordersize 0, floating:0, onworkspace:f[1]
+      # windowrulev2 = rounding 0, floating:0, onworkspace:f[1]
 
       # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
       dwindle = {
@@ -198,7 +223,7 @@
       bind = [
         # Launch
         "$mainMod, Return, exec, $terminal"
-        "$mainMod, space, exec, $menu"
+        "$mainMod, space, exec, pkill rofi || rofi -show combi"
         # take screenshot
         "ALT_SHIFT, 3, exec, ${pkgs.grim}/bin/grim -o $(hyprctl -j monitors | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')"
         ''ALT_SHIFT, 4, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')''
@@ -271,18 +296,25 @@
         "$mainMod ALT, p, pseudo"
         "$mainMod ALT, q, killactive"
         "$mainMod ALT, s, togglesplit"
+        ",XF86Sleep, exec, systemctl suspend"
+      ];
 
-        # Hot keys
-        ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      # l -> locked, will also work when an input inhibitor (e.g. a lockscreen) is active.
+      bindl = [
         ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         ",XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause"
         ",XF86AudioStop, exec, ${pkgs.playerctl}/bin/playerctl stop"
         ",XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous"
         ",XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next"
-        ",XF86MonBrightnessDown, exec, ${pkgs.light}/bin/light -U 10"
-        ",XF86MonBrightnessUp, exec, ${pkgs.light}/bin/light -A 10"
-        ",XF86Sleep, exec, systemctl suspend"
+      ];
+
+      # e -> repeat, will repeat when held.
+      bindel = [
+        ",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86MonBrightnessUp, exec, ${pkgs.brightnessctl}/bin/brightnessctl set +10%"
+        ",XF86MonBrightnessDown, exec, ${pkgs.brightnessctl}/bin/brightnessctl set 10%-"
       ];
 
       # Move/resize windows with mainMod + LMB/RMB and dragging
@@ -321,13 +353,17 @@
         "workspace name:Terminal,class:^(dev.warp.Warp)$"
       ];
     };
-  };
 
-  # https://github.com/nix-community/home-manager/issues/2064
-  systemd.user.targets.tray = {
-    Unit = {
-      Description = "Home Manager System Tray";
-      Requires = [ "graphical-session-pre.target" ];
-    };
+    extraConfig = ''
+      # window resize
+      bind = $mainMod, R, submap, resize
+      submap = resize
+      binde = , l, resizeactive, 10 0
+      binde = , h, resizeactive, -10 0
+      binde = , k, resizeactive, 0 -10
+      binde = , j, resizeactive, 0 10
+      bind = , escape, submap, reset
+      submap = reset
+    '';
   };
 }
