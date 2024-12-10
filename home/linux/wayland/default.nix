@@ -10,9 +10,7 @@
     ./mpv.nix
     ./network-manager-applet.nix
     ./rofi.nix
-    # ./syncthing.nix
     ./udiskie.nix
-    ./vscode.nix
     ./wezterm.nix
     ./xdg.nix
     ./hyprland
@@ -24,7 +22,6 @@
     ffmpeg
     seahorse
     imv
-    maestral-gui
     nwg-displays
     spacedrive
     swappy
