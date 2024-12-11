@@ -13,7 +13,7 @@
       dv = "docker volume";
       # flatpak
       f = "flatpak";
-      fI = "flatpak install flathub";
+      fi = "flatpak install flathub";
       fs = "flatpak search";
       fu = "flatpak update";
       # systemctl

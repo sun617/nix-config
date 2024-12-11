@@ -22,6 +22,7 @@
     ffmpeg
     seahorse
     imv
+    mission-center
     nwg-displays
     spacedrive
     swappy
