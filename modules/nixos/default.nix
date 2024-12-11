@@ -16,7 +16,7 @@
     randomizedDelaySec = "10min";
     persistent = true;
   };
-  
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -134,13 +134,13 @@
       alsa.enable = true;
       pulse.enable = true;
     };
-    rustdesk-server = {
-      enable = true;
-      openFirewall = true;
-      signal.relayHosts = [
-        "relay.rustdesk.local"
-      ];
-    };
+    # rustdesk-server = {
+    #   enable = true;
+    #   openFirewall = true;
+    #   signal.relayHosts = [
+    #     "relay.rustdesk.local"
+    #   ];
+    # };
     # samba = {
     #   enable = true;
     #   openFirewall = true;
@@ -175,7 +175,7 @@
       };
     };
     libvirtd.enable = true;
-    waydroid.enable = true;
+    # waydroid.enable = true;
   };
 
   # Open ports in the firewall.
