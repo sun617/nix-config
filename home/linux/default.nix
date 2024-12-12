@@ -4,6 +4,7 @@
   imports = [
     ../base
     ./fish.nix
+    ./flatpak.nix
     ./wayland
     ./wireplumber.nix
   ];

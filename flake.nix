@@ -15,9 +15,12 @@
     # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Nix Flakepak
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=v0.5.1";
   };
 
-  outputs = { nixpkgs, nixos-hardware, nix-darwin, home-manager, ... }@inputs:
+  outputs = { nixpkgs, nixos-hardware, nix-darwin, home-manager, nix-flatpak, ... }@inputs:
     let
       inherit (nixpkgs.lib) nixosSystem;
       inherit (nix-darwin.lib) darwinSystem;
@@ -71,9 +74,9 @@
         homeManagerConfiguration {
           pkgs = pkgsForSystem system;
           modules = [
+            nix-flatpak.homeManagerModules.nix-flatpak
             ./home/linux
           ];
-          extraSpecialArgs = { inherit inputs; };
         };
 
         mac1 = let 
