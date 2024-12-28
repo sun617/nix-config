@@ -103,22 +103,7 @@
     fish.enable = true;
     hyprland.enable = true;
     hyprlock.enable = true;
-    clash-verge = {
-      enable = true;
-      package = pkgs.clash-verge-rev;
-      # package = pkgs.clash-nyanpasu;
-      tunMode = true;
-    };
-  };
-  # https://github.com/NixOS/nixpkgs/pull/344659/files
-  systemd.services.clash-verge = {
-    enable = true;
-    description = "Clash Verge Service Mode";
-    serviceConfig = {
-      ExecStart = "${pkgs.clash-verge-rev}/bin/clash-verge-service";
-      Restart = "on-failure";
-    };
-    wantedBy = [ "multi-user.target" ];
+    clash-verge.enable = true;
   };
 
   # List services that you want to enable:
