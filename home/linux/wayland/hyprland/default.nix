@@ -16,9 +16,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    plugins = [
-      pkgs.hyprlandPlugins.hyprspace
-    ];
+    # plugins = [
+    #   pkgs.hyprlandPlugins.hyprspace
+    # ];
 
     settings = {
       ################
@@ -148,6 +148,12 @@
           "workspacesIn, 1, 1.21, almostLinear, fade"
           "workspacesOut, 1, 1.94, almostLinear, fade"
         ];
+      };
+
+      # See https://wiki.hyprland.org/Configuring/Variables/#render
+      # https://github.com/hyprwm/Hyprland/issues/6844#issuecomment-2614985631
+      render = {
+        allow_early_buffer_release = false;
       };
 
       # Ref https://wiki.hyprland.org/Configuring/Workspace-Rules/
