@@ -6,7 +6,6 @@
     ./fish.nix
     ./flatpak.nix
     ./wayland
-    ./wireplumber.nix
   ];
 
   home = {
