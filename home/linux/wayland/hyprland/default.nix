@@ -94,6 +94,7 @@
       # https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
         rounding = 10;
+        rounding_power = 2;
 
         # Change transparency of focused and unfocused windows
         active_opacity = 1.0;
@@ -148,12 +149,6 @@
           "workspacesIn, 1, 1.21, almostLinear, fade"
           "workspacesOut, 1, 1.94, almostLinear, fade"
         ];
-      };
-
-      # See https://wiki.hyprland.org/Configuring/Variables/#render
-      # https://github.com/hyprwm/Hyprland/issues/6844#issuecomment-2614985631
-      render = {
-        allow_early_buffer_release = false;
       };
 
       # Ref https://wiki.hyprland.org/Configuring/Workspace-Rules/
@@ -296,7 +291,6 @@
         "$mainMod SHIFT ALT, l, movecurrentworkspacetomonitor, r"
 
         # Dispatchers
-        "$mainMod ALT, e, exit"
         "$mainMod ALT, f, fullscreen"
         "$mainMod ALT, m, togglefloating"
         "$mainMod ALT, p, pseudo"
@@ -336,15 +330,9 @@
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
       # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
 
-      # Example windowrule v1
-      # windowrule = float, ^(kitty)$
-      # workspace = [
-      #   "name:firefox, monitor:DP-3"
-      #   "name:slack, monitor:eDP-1"
-      # ];
-      # Example windowrule v2
-      # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-      windowrulev2 = [
+      # Example windowrule
+      # windowrulev = float,class:^(kitty)$,title:^(kitty)$
+      windowrule = [
         "float,class:^(.blueman-manager-wrapped)$"
         "float,class:^(com.saivert.pwvucontrol)$"
         "float,class:^(imv)$"
