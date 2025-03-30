@@ -106,11 +106,12 @@
     clash-verge.enable = true;
   };
 
+  security.rtkit.enable = true;
+
   # List services that you want to enable:
   services = {
     blueman.enable = true;
     flatpak.enable = true;
-    gnome.gnome-keyring.enable = true;
     logind.lidSwitchDocked = "suspend";
     openssh.enable = true;
     pipewire = {
@@ -138,10 +139,6 @@
     #   };
     # };
     udisks2.enable = true;
-  };
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   virtualisation = {

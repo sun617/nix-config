@@ -3,18 +3,26 @@
 {
   imports = [
     ./alacritty.nix
-    ./blueman-applet.nix
     ./fcitx5.nix
     ./gtk.nix
-    ./mako.nix
     ./mpv.nix
     ./network-manager-applet.nix
     ./rofi.nix
-    ./udiskie.nix
     ./wezterm.nix
     ./xdg.nix
     ./hyprland
   ];
+
+  services = {
+    blueman-applet.enable = true;
+    gnome-keyring.enable = true;
+    mako = {
+      enable = true;  
+      defaultTimeout = 5000;
+    };
+    # syncthing.enable = true;
+    udiskie.enable = true;
+  };
 
   home.packages = with pkgs; [
     appimage-run
