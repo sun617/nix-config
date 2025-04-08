@@ -93,6 +93,17 @@
           ];
         };
 
+        aix1pro = let
+          system = "x86_64-linux";
+        in
+        homeManagerConfiguration {
+          pkgs = pkgsForSystem system;
+          modules = [
+            nix-flatpak.homeManagerModules.nix-flatpak
+            ./home/linux
+          ];
+        };
+
         mac1 = let 
           system = "aarch64-darwin";
         in
