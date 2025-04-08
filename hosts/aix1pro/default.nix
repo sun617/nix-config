@@ -6,5 +6,5 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "x1c6";
+  networking.hostName = "aix1pro";
 }

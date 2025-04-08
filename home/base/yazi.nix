@@ -7,7 +7,7 @@
       enableFishIntegration = true;
       settings = {
         manager = {
-          sort_by = "modified";
+          sort_by = "mtime";
           sort_reverse = true;
           linemode = "mtime";
         };

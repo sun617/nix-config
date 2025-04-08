@@ -49,6 +49,20 @@
 
           specialArgs = { inherit nixpkgs; };
         };
+
+        aix1pro = let
+          system = "x86_64-linux";
+        in
+        nixosSystem {
+          inherit system;
+          pkgs = pkgsForSystem system;
+
+          modules = [
+            ./hosts/aix1pro
+          ];
+
+          specialArgs = { inherit nixpkgs; };
+        };
       };
 
       darwinConfigurations = {
