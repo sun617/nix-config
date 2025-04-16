@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ../../modules/nixos
+    ../../../modules/nixos
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "aix1pro";
+  networking.hostName = "x1c9";
 }

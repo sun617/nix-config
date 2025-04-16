@@ -28,10 +28,10 @@
     appimage-run
     code-cursor
     ffmpeg
-    seahorse
     imv
     mission-center
     nwg-displays
+    seahorse
     spacedrive
     swappy
     warp-terminal

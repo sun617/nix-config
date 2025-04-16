@@ -5,6 +5,7 @@
     ../base
     ./fish.nix
     ./flatpak.nix
+    ./podman.nix
     ./wayland
   ];
 

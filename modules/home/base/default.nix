@@ -15,7 +15,6 @@
       ghostscript
       imagemagick
       jnv
-      ollama
       unzip
       xh
       zip

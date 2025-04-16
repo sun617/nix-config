@@ -43,7 +43,7 @@
           pkgs = pkgsForSystem system;
 
           modules = [
-            ./hosts/x1c9
+            ./hosts/x1c9/nixos
             nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
           ];
 
@@ -58,7 +58,7 @@
           pkgs = pkgsForSystem system;
 
           modules = [
-            ./hosts/aix1pro
+            ./hosts/aix1pro/nixos
           ];
 
           specialArgs = { inherit nixpkgs; };
@@ -66,7 +66,7 @@
       };
 
       darwinConfigurations = {
-        mac1 = let
+        m1max = let
           system = "aarch64-darwin";
         in
         darwinSystem {
@@ -74,7 +74,7 @@
           pkgs = pkgsForSystem system;
 
           modules = [
-            ./hosts/mac1
+            ./hosts/m1max/darwin
           ];
 
           specialArgs = { inherit nixpkgs; };
@@ -89,7 +89,7 @@
           pkgs = pkgsForSystem system;
           modules = [
             nix-flatpak.homeManagerModules.nix-flatpak
-            ./home/linux
+            ./hosts/x1c9/home
           ];
         };
 
@@ -100,17 +100,17 @@
           pkgs = pkgsForSystem system;
           modules = [
             nix-flatpak.homeManagerModules.nix-flatpak
-            ./home/linux
+            ./hosts/aix1pro/home
           ];
         };
 
-        mac1 = let 
+        m1max = let 
           system = "aarch64-darwin";
         in
         homeManagerConfiguration {
           pkgs = pkgsForSystem system;
           modules = [
-            ./home/darwin
+            ./hosts/m1max/home
           ];
         };
       };

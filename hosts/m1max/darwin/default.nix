@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../modules/darwin
+    ../../../modules/darwin
   ];
 
   users.users."h.cui" = {

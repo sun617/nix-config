@@ -16,15 +16,22 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/b8510135-f337-4f4e-8c1c-7287b7a7f7a5";
+    { 
+      device = "/dev/disk/by-uuid/20ecfb8a-305d-4c89-8664-98273df4fd69";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/ACAB-506E";
+    { 
+      device = "/dev/disk/by-uuid/F631-6CE0";
       fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  fileSystems."/home" =
+    { 
+      device = "/dev/disk/by-uuid/dfdb7384-d050-4906-9ba1-75764d910fa6";
+      fsType = "ext4";
     };
 
   swapDevices = [
@@ -50,11 +57,6 @@
   hardware = {
     cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     bluetooth.enable = true;
-    graphics = {
-      enable = true;
-      extraPackages = with pkgs; [
-        amdvlk
-      ];
-    };
+    graphics.enable = true;
   };
 }

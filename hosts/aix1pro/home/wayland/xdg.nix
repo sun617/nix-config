@@ -1,0 +1,9 @@
+{
+  xdg.mimeApps.defaultApplications = {
+    "text/html" = [ "com.google.Chrome.desktop" ];
+    "x-scheme-handler/http" = [ "com.google.Chrome.desktop" ];
+    "x-scheme-handler/https" = [ "com.google.Chrome.desktop" ];
+    "x-scheme-handler/about" = [ "com.google.Chrome.desktop" ];
+    "x-scheme-handler/unknown" = [ "com.google.Chrome.desktop" ];
+  };
+}

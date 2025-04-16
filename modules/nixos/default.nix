@@ -56,6 +56,7 @@
   services = {
     blueman.enable = true;
     flatpak.enable = true;
+    fwupd.enable = true;
     logind.lidSwitchDocked = "suspend";
     openssh.enable = true;
     pipewire = {
