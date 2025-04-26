@@ -15,6 +15,7 @@
       ghostscript
       imagemagick
       jnv
+      openssl
       unzip
       xh
       zip

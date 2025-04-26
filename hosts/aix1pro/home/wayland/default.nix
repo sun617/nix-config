@@ -1,9 +1,6 @@
 {
   imports = [
     ./xdg.nix
+    ./open-webui.nix
   ];
-
-  services = {
-    ollama.enable = true;
-  };
 }

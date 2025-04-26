@@ -13,6 +13,7 @@
       "com.usebruno.Bruno"
       "com.tencent.WeChat"
       "io.dbeaver.DBeaverCommunity"
+      "io.podman_desktop.PodmanDesktop"
       "md.obsidian.Obsidian"
       "org.mozilla.firefox"
       "org.telegram.desktop"

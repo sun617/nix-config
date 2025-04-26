@@ -65,8 +65,8 @@
       env = [
         "XCURSOR_SIZE,24"
         "QT_QPA_PLATFORMTHEME,qt5ct" # change to qt6ct if you have that
-        "WARP_ENABLE_WAYLAND,1"
-        "LD_LIBRARY_PATH,${pkgs.wayland}/lib" # https://github.com/NixOS/nixpkgs/pull/301944#issuecomment-2076070174
+        # "WARP_ENABLE_WAYLAND,1"
+        # "LD_LIBRARY_PATH,${pkgs.wayland}/lib" # https://github.com/NixOS/nixpkgs/pull/301944#issuecomment-2076070174
       ];
 
       #####################
