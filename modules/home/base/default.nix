@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 {
   home = {
@@ -7,6 +7,7 @@
       EDITOR = "hx";
     };
     packages = with pkgs; [
+      age
       azure-cli
       bat
       bottom
@@ -16,6 +17,7 @@
       imagemagick
       jnv
       openssl
+      sops
       unzip
       xh
       zip
@@ -26,6 +28,7 @@
   imports = [
     ./android.nix
     ./aws.nix
+    ./cloudflare.nix
     ./docker-compose.nix
     ./fish
     ./git.nix
@@ -36,6 +39,14 @@
     ./ssh.nix
     ./yazi.nix
   ];
+
+  sops = {
+    # defaultSopsFile = ../../../secrets/secrets.yaml;
+    age = {
+      keyFile = "${config.home.homeDirectory}/.age-key.txt";
+      generateKey = true;
+    };
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

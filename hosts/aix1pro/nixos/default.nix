@@ -4,6 +4,7 @@
   imports = [
     ../../../modules/nixos
     ./hardware-configuration.nix
+    ./cloudflared.nix
     ./dnsmasq.nix
     ./nginx.nix
   ];

@@ -18,9 +18,12 @@
 
     # Nix Flakepak
     nix-flatpak.url = "github:gmodena/nix-flatpak/latest";
+
+    # Sops Nix
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = { nixpkgs, nixos-hardware, nix-darwin, home-manager, nix-flatpak, ... }@inputs:
+  outputs = { nixpkgs, nixos-hardware, nix-darwin, home-manager, nix-flatpak, sops-nix, ... }@inputs:
     let
       inherit (nixpkgs.lib) nixosSystem;
       inherit (nix-darwin.lib) darwinSystem;
@@ -44,6 +47,7 @@
 
           modules = [
             ./hosts/x1c9/nixos
+            sops-nix.nixosModules.sops
             nixos-hardware.nixosModules.lenovo-thinkpad-x1-9th-gen
           ];
 
@@ -59,6 +63,7 @@
 
           modules = [
             ./hosts/aix1pro/nixos
+            sops-nix.nixosModules.sops
           ];
 
           specialArgs = { inherit nixpkgs; };
@@ -75,6 +80,7 @@
 
           modules = [
             ./hosts/m1max/darwin
+            sops-nix.darwinModules.sops
           ];
 
           specialArgs = { inherit nixpkgs; };
@@ -88,8 +94,9 @@
         homeManagerConfiguration {
           pkgs = pkgsForSystem system;
           modules = [
-            nix-flatpak.homeManagerModules.nix-flatpak
             ./hosts/x1c9/home
+            sops-nix.homeManagerModules.sops
+            nix-flatpak.homeManagerModules.nix-flatpak
           ];
         };
 
@@ -99,8 +106,9 @@
         homeManagerConfiguration {
           pkgs = pkgsForSystem system;
           modules = [
-            nix-flatpak.homeManagerModules.nix-flatpak
             ./hosts/aix1pro/home
+            sops-nix.homeManagerModules.sops
+            nix-flatpak.homeManagerModules.nix-flatpak
           ];
         };
 
@@ -111,6 +119,7 @@
           pkgs = pkgsForSystem system;
           modules = [
             ./hosts/m1max/home
+            sops-nix.homeManagerModules.sops
           ];
         };
       };

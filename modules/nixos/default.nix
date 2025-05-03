@@ -43,6 +43,20 @@
     ];
   };
 
+  sops = {
+    # defaultSopsFile = ../../secrets/secrets.yaml;
+    age = {
+      keyFile = "/var/lib/sops-nix/key.txt";
+      generateKey = true;
+    };
+    secrets = {
+      "cloudflared/tunnel-credentials" = {
+        sopsFile = ../../secrets/system/cloudflared/tunnel-credentials.enc;
+        format = "binary";
+      };
+    };
+  };
+
   programs = {
     fish.enable = true;
     hyprland.enable = true;

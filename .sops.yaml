@@ -1,0 +1,12 @@
+keys:
+  - &aix1pro age1fyqn0lk66tqx2wgeftw5du6hpdznr6xwujytttwgav3ncudlmsksrxpg33
+  - &sun age17sxj8c8aquver0m60nkhd80z2j3zc4zsv2rvvxdk556cqz4yqdyqrhs75n
+creation_rules:
+  - path_regex: secrets/system/.+\.(yaml|json|env|ini|enc)$
+    key_groups:
+    - age:
+      - *aix1pro
+  - path_regex: secrets/user/.+\.(yaml|json|env|ini|enc)$
+    key_groups:
+    - age:
+      - *sun
