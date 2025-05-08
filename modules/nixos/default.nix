@@ -61,7 +61,8 @@
     fish.enable = true;
     hyprland.enable = true;
     hyprlock.enable = true;
-    clash-verge.enable = true;
+    # https://github.com/clash-verge-rev/clash-verge-rev/issues/3428
+    # clash-verge.enable = true;
   };
 
   security.rtkit.enable = true;
