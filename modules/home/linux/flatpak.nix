@@ -15,6 +15,7 @@
       "io.dbeaver.DBeaverCommunity"
       "io.podman_desktop.PodmanDesktop"
       "md.obsidian.Obsidian"
+      "org.localsend.localsend_app"
       "org.mozilla.firefox"
       "org.telegram.desktop"
       "us.zoom.Zoom"

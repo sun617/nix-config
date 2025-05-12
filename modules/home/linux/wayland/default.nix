@@ -18,7 +18,9 @@
     gnome-keyring.enable = true;
     mako = {
       enable = true;  
-      defaultTimeout = 5000;
+      settings = {
+        default-timeout = 5000;
+      };
     };
     # syncthing.enable = true;
     udiskie.enable = true;

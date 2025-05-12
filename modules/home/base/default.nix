@@ -17,8 +17,10 @@
       imagemagick
       jnv
       openssl
+      pwgen
       sops
       unzip
+      wget
       xh
       zip
       zola
