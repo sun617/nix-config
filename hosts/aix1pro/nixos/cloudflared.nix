@@ -10,4 +10,11 @@
       };
     };
   };
+
+  sops.secrets = {
+    "cloudflared/tunnel-credentials" = {
+      sopsFile = ../../../secrets/system/cloudflared/tunnel-credentials.enc;
+      format = "binary";
+    };
+  };
 }

@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 {
   home = {
@@ -7,7 +7,6 @@
       EDITOR = "hx";
     };
     packages = with pkgs; [
-      age
       azure-cli
       bat
       bottom
@@ -18,7 +17,6 @@
       jnv
       openssl
       pwgen
-      sops
       unzip
       wget
       xh
@@ -38,17 +36,10 @@
     ./helix.nix
     ./lsp-servers.nix
     ./nix-gc.nix
+    ./sops.nix
     ./ssh.nix
     ./yazi.nix
   ];
-
-  sops = {
-    # defaultSopsFile = ../../../secrets/secrets.yaml;
-    age = {
-      keyFile = "${config.home.homeDirectory}/.age-key.txt";
-      generateKey = true;
-    };
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

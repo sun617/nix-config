@@ -9,6 +9,7 @@
     [
       ../nix
       ./fonts-and-icons.nix
+      ./sops.nix
     ];
 
   nix.gc = {
@@ -41,20 +42,6 @@
     packages = with pkgs; [
       git
     ];
-  };
-
-  sops = {
-    # defaultSopsFile = ../../secrets/secrets.yaml;
-    age = {
-      keyFile = "/var/lib/sops-nix/key.txt";
-      generateKey = true;
-    };
-    secrets = {
-      "cloudflared/tunnel-credentials" = {
-        sopsFile = ../../secrets/system/cloudflared/tunnel-credentials.enc;
-        format = "binary";
-      };
-    };
   };
 
   programs = {
