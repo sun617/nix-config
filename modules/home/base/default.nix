@@ -36,7 +36,6 @@
     ./helix.nix
     ./lsp-servers.nix
     ./nix-gc.nix
-    ./sops.nix
     ./ssh.nix
     ./yazi.nix
   ];
