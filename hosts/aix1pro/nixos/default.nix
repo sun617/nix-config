@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../../modules/nixos
+    ../../../modules/nixos/desktop
     ./hardware-configuration.nix
     ./cloudflared.nix
     ./dnsmasq.nix

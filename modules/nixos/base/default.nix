@@ -7,9 +7,8 @@
 {
   imports =
     [
-      ../nix
-      ./fonts-and-icons.nix
-      ./sops.nix
+      ../../nix
+      ../sops.nix
     ];
 
   nix.gc = {
@@ -35,57 +34,18 @@
     shell = pkgs.fish;
     extraGroups = [
       "docker"
-      "libvirtd"
       "networkmanager"
       "wheel" # Enable ‘sudo’ for the user.
-    ];
-    packages = with pkgs; [
-      git
     ];
   };
 
   programs = {
     fish.enable = true;
-    hyprland.enable = true;
-    hyprlock.enable = true;
-    # https://github.com/clash-verge-rev/clash-verge-rev/issues/3428
-    # clash-verge.enable = true;
   };
-
-  security.rtkit.enable = true;
 
   # List services that you want to enable:
   services = {
-    blueman.enable = true;
-    flatpak.enable = true;
-    fwupd.enable = true;
-    logind.lidSwitchDocked = "suspend";
     openssh.enable = true;
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      pulse.enable = true;
-    };
-    # rustdesk-server = {
-    #   enable = true;
-    #   openFirewall = true;
-    #   signal.relayHosts = [
-    #     "relay.rustdesk.local"
-    #   ];
-    # };
-    # samba = {
-    #   enable = true;
-    #   openFirewall = true;
-    #   shares = {
-    #     private = {
-    #       path = "/home/sun/workspace/share";
-    #       "read only" = false;
-    #       browseable = "yes";
-    #       "guest ok" = "no";
-    #     };
-    #   };
-    # };
-    udisks2.enable = true;
   };
 
   virtualisation = {
@@ -102,8 +62,6 @@
         };
       };
     };
-    libvirtd.enable = true;
-    # waydroid.enable = true;
   };
 
   # Open ports in the firewall.
