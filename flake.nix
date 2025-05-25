@@ -68,6 +68,21 @@
 
           specialArgs = { inherit nixpkgs; };
         };
+
+        um690slim = let
+          system = "x86_64-linux";
+        in
+        nixosSystem {
+          inherit system;
+          pkgs = pkgsForSystem system;
+
+          modules = [
+            ./hosts/um690slim/nixos
+            sops-nix.nixosModules.sops
+          ];
+
+          specialArgs = { inherit nixpkgs; };
+        };
       };
 
       darwinConfigurations = {
@@ -109,6 +124,17 @@
             ./hosts/aix1pro/home
             sops-nix.homeManagerModules.sops
             nix-flatpak.homeManagerModules.nix-flatpak
+          ];
+        };
+
+        um690slim = let
+          system = "x86_64-linux";
+        in
+        homeManagerConfiguration {
+          pkgs = pkgsForSystem system;
+          modules = [
+            ./hosts/um690slim/home
+            sops-nix.homeManagerModules.sops
           ];
         };
 
