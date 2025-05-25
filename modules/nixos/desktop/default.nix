@@ -1,11 +1,10 @@
 { ... }:
 
 {
-  imports =
-    [
-      ../base
-      ../fonts-and-icons.nix
-    ];
+  imports = [
+    ../base
+    ./fonts-and-icons.nix
+  ];
 
   programs = {
     hyprland.enable = true;

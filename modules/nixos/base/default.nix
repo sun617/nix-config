@@ -5,11 +5,10 @@
 { pkgs, ... }:
 
 {
-  imports =
-    [
-      ../../nix
-      ../sops.nix
-    ];
+  imports = [
+    ../../nix
+    ./sops.nix
+  ];
 
   nix.gc = {
     dates = "22:00";

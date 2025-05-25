@@ -1,10 +1,9 @@
 { ... }:
 
 {
-  imports =
-    [
-      ../../base
-    ];
+  imports = [
+    ../../base
+  ];
 
   # List services that you want to enable:
   services = {
