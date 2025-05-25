@@ -7,7 +7,7 @@
   ];
 
   sops = {
-    # defaultSopsFile = ../../../secrets/user/secrets.yaml;
+    # defaultSopsFile = ../../../../secrets/user/secrets.yaml;
     age = {
       keyFile = "${config.home.homeDirectory}/.age-key.txt";
       generateKey = true;

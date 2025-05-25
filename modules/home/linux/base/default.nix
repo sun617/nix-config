@@ -2,12 +2,10 @@
 
 {
   imports = [
-    ../base
+    ../../base
     ./fish.nix
-    ./flatpak.nix
     ./podman.nix
     ./sops.nix
-    ./wayland
   ];
 
   home = {

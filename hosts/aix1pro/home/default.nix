@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../../modules/home/linux
+    ../../../modules/home/linux/desktop
     ./ollama.nix
     ./wayland
   ];
