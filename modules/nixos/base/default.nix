@@ -8,6 +8,7 @@
   imports = [
     ../../nix
     ./sops.nix
+    ./tailscale.nix
   ];
 
   nix.gc = {

@@ -11,11 +11,6 @@
     extraUpFlags = [
       "--advertise-tags=tag:linux"
     ];
-    # for server
-    useRoutingFeatures = "server";
-    extraSetFlags = [
-      "--advertise-routes=10.0.0.0/24"
-    ];
   };
 
   sops.secrets = {
