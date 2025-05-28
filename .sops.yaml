@@ -1,12 +1,16 @@
 keys:
   - &aix1pro age1fyqn0lk66tqx2wgeftw5du6hpdznr6xwujytttwgav3ncudlmsksrxpg33
-  - &sun age17sxj8c8aquver0m60nkhd80z2j3zc4zsv2rvvxdk556cqz4yqdyqrhs75n
+  - &aix1pro_user age17sxj8c8aquver0m60nkhd80z2j3zc4zsv2rvvxdk556cqz4yqdyqrhs75n
+  - &x1c9 age14lcvgq5ann97cppwlnfx4hudr05jvrhletdnrn4pqpcjqtrac4nqfnup5w
+  - &x1c9_user age1p457syqtwja7vvyjd5ahleld4vjha7mnxa59xc4fyvshc4tf2gxqrfx0vz
 creation_rules:
   - path_regex: secrets/system/.+\.(yaml|json|env|ini|enc)$
     key_groups:
     - age:
       - *aix1pro
+      - *x1c9
   - path_regex: secrets/user/.+\.(yaml|json|env|ini|enc)$
     key_groups:
     - age:
-      - *sun
+      - *aix1pro_user
+      - *x1c9_user
