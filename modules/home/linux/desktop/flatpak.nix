@@ -2,6 +2,7 @@
   services.flatpak = {
     enable = true;
     packages = [
+      "app.zen_browser.zen"
       "com.discordapp.Discord"
       "com.github.tchx84.Flatseal"
       "com.google.Chrome"
