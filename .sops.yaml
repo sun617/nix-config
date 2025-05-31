@@ -1,4 +1,6 @@
 keys:
+  - &um690slim age1hhx3th3y2y9rxjj64h2weydpqhn450wukcsel6cm6wz2fcr3md0secvras
+  - &um690slim_user age1xg6v66zqdmepvqp3lvcvp3sh5yxt6n4tmeftk9jqpk3y354cnf6snxt95x
   - &aix1pro age1fyqn0lk66tqx2wgeftw5du6hpdznr6xwujytttwgav3ncudlmsksrxpg33
   - &aix1pro_user age17sxj8c8aquver0m60nkhd80z2j3zc4zsv2rvvxdk556cqz4yqdyqrhs75n
   - &x1c9 age14lcvgq5ann97cppwlnfx4hudr05jvrhletdnrn4pqpcjqtrac4nqfnup5w
@@ -7,10 +9,12 @@ creation_rules:
   - path_regex: secrets/system/.+\.(yaml|json|env|ini|enc)$
     key_groups:
     - age:
+      - *um690slim
       - *aix1pro
       - *x1c9
   - path_regex: secrets/user/.+\.(yaml|json|env|ini|enc)$
     key_groups:
     - age:
+      - *um690slim_user
       - *aix1pro_user
       - *x1c9_user
