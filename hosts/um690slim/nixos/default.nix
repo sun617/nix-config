@@ -3,6 +3,7 @@
 {
   imports = [
     ../../../modules/nixos/server
+    ./hardware-configuration.nix
     ./tailscale.nix
   ];
 

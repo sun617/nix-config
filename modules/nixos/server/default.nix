@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../base
+    ../base
   ];
 
   # List services that you want to enable:

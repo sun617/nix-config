@@ -12,6 +12,7 @@
     username = "sun";
     homeDirectory = "/home/sun";
     packages = with pkgs; [
+      gptfdisk
       usbutils
     ];
   };

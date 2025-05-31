@@ -37,6 +37,11 @@
       "networkmanager"
       "wheel" # Enable ‘sudo’ for the user.
     ];
+    packages = with pkgs; [
+      git
+      helix
+      home-manager
+    ];
   };
 
   programs = {
