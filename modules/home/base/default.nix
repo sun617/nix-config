@@ -11,7 +11,8 @@
       bat
       bottom
       curl
-      du-dust
+      dig
+      dust
       ghostscript
       imagemagick
       jnv

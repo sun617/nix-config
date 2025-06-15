@@ -18,12 +18,11 @@
       fu = "flatpak update";
       # systemctl
       s = "systemctl";
-      ss = "systemctl status";
       su = "systemctl --user";
       sus = "systemctl --user status";
       # journalctl
-      j = "journalctl --pager-end";
-      ju = "journalctl --user --pager-end";
+      j = "journalctl";
+      ju = "journalctl --user";
     };
   };
 }
