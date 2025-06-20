@@ -7,6 +7,7 @@
     ./adguardhome.nix
     ./caddy.nix
     ./cloudflared.nix
+    ./restic.nix
     ./tailscale.nix
   ];
 
