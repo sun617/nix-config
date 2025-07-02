@@ -1,0 +1,33 @@
+{
+  # https://github.com/NixOS/nixpkgs/issues/309623
+  # security.pki.certificateFiles = [
+  #   "/etc/nixos/nginx/ssl/certs/server.crt"
+  # ];
+  security.pki.certificates = [
+    ''
+    -----BEGIN CERTIFICATE-----
+    MIID1DCCArygAwIBAgIURjXW+IimQcQb8p/g+kPq3glg5MgwDQYJKoZIhvcNAQEL
+    BQAwXDELMAkGA1UEBhMCSlAxDjAMBgNVBAgMBVRva3lvMRIwEAYDVQQHDAlTaGlu
+    YWdhd2ExEzARBgNVBAoMClJha3N1bCBkZXYxFDASBgNVBAMMCyoucmFrc3VsLm1l
+    MB4XDTI1MDYyNTEyNDY1M1oXDTM1MDYyMzEyNDY1M1owXDELMAkGA1UEBhMCSlAx
+    DjAMBgNVBAgMBVRva3lvMRIwEAYDVQQHDAlTaGluYWdhd2ExEzARBgNVBAoMClJh
+    a3N1bCBkZXYxFDASBgNVBAMMCyoucmFrc3VsLm1lMIIBIjANBgkqhkiG9w0BAQEF
+    AAOCAQ8AMIIBCgKCAQEAzIINKtPNW5TxHUSCNomKq48znRnrWqTSkh2CsJBwih8u
+    Q2Wu+DTH+qrra+JluIZmxV94j5f82NWZvWu76PZNTJbNaWGFtEXyL3xuMdowpjYS
+    LblmffsWtsDAeoxexwG3wEcp1vN3B5yIOjK+2fpoySpDmi9Ccq92SpR0KjApnjKn
+    pbUlpnC2OLzbW27OM2+ZS6eVyOs6ZmthrJXNXqSbZ2jmeBa9XrMtDoK+jQGo1A/V
+    8rW1QT7a8nKB7TnrSs84wunzVcXjXeXW7JRs2xELvIbT+hm96H0+YlUR6IHCI6Ng
+    q/KOsskZwormLeKjGlrEFHvyZt3G2veHGOfVnazZyQIDAQABo4GNMIGKMB0GA1Ud
+    DgQWBBTUCdEO1xIIt1h0+xF8ToZcUWsSYTAfBgNVHSMEGDAWgBTUCdEO1xIIt1h0
+    +xF8ToZcUWsSYTAPBgNVHRMBAf8EBTADAQH/MDcGA1UdEQQwMC6CCXJha3N1bC5t
+    ZYILKi5yYWtzdWwubWWCFHNlc3Npb24ucGYucmFrc3VsLm1lMA0GCSqGSIb3DQEB
+    CwUAA4IBAQAwIxhixZFDQXgDz4cqmL3+PJM2lfxahL4guAxX90T4UEU2KHyBPaDY
+    n03iiGpzDqt0QihMm6RW29zGQECsUeUWkn75Eq9pAA0HW1JPyP/yD0TKQRMIWUwB
+    WwYkolfELFBKu25kkSFveON4+n6Q0JERxGlMrs4dioalG1Y179dy/g/bXyvNv/u/
+    +ExzayofKdbZmRZ1lTqlzTgXUj139YjbKYu2J1o2k7XyUMmZugls7S+MW89DKLot
+    2BzsOBf+ZoGVuA9re1g5tOpgw8LcTdiZkeA9jymj/DXkyc6+4sat1ilAPD1XloWx
+    gB8f3c9hnkndl3UseQU7yN3hOSdhHf7w
+    -----END CERTIFICATE-----
+    ''
+  ];
+}
