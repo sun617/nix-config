@@ -13,6 +13,7 @@
       curl
       dig
       dust
+      gemini-cli
       ghostscript
       imagemagick
       jnv
@@ -22,7 +23,6 @@
       wget
       xh
       zip
-      zola
     ];
   };
 
