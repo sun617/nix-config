@@ -15,7 +15,6 @@
 
   services = {
     blueman-applet.enable = true;
-    gnome-keyring.enable = true;
     mako = {
       enable = true;  
       settings = {
@@ -33,7 +32,6 @@
     imv
     mission-center
     nwg-displays
-    seahorse
     spacedrive
     swappy
     warp-terminal

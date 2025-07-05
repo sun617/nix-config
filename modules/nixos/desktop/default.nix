@@ -4,6 +4,7 @@
   imports = [
     ../base
     ./fonts-and-icons.nix
+    ./gnome-keyring.nix
   ];
 
   programs = {

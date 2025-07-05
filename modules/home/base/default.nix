@@ -15,6 +15,7 @@
       dust
       gemini-cli
       ghostscript
+      gnumake
       imagemagick
       jnv
       openssl
