@@ -4,7 +4,6 @@
   imports = [
     ./alacritty.nix
     ./fcitx5.nix
-    ./gtk.nix
     ./mpv.nix
     ./network-manager-applet.nix
     ./rofi.nix
