@@ -11,6 +11,8 @@
       enable = true;
       defaultApplications = {
         "x-scheme-handler/https" = [ "app.zen_browser.zen.desktop" ];
+        # "x-scheme-handler/slack" = [ "com.slack.Slack.desktop" ];
+        # "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
       };
     };
   };

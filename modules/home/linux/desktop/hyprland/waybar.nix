@@ -29,13 +29,6 @@
           format-icons = {
             active = "";
             default = "";
-
-            Browser = "";
-            Chat = "󰒱";
-            Database = "";
-            Editor = "󰨞";
-            FileManager = "";
-            Terminal = "";
           };
         };
         "hyprland/window" = {
@@ -76,7 +69,11 @@
             phone = "";
             portable = "";
             car = "";
-            default = [ "" "" "" ];
+            default = [
+              ""
+              ""
+              ""
+            ];
           };
           on-click = "${pkgs.pwvucontrol}/bin/pwvucontrol";
         };
@@ -96,7 +93,17 @@
         backlight = {
           # device = "acpi_video1";
           format = "{percent}% {icon}";
-          format-icons = ["" "" "" "" "" "" "" "" ""];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
         battery = {
           states = {
@@ -110,7 +117,13 @@
           format-alt = "{time} {icon}";
           format-good = ""; # An empty format will hide the module
           format-full = "";
-          format-icons = [ "" "" "" "" "" ];
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
         };
         clock = {
           timezone = "Japan/Tokyo";

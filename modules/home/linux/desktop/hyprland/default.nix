@@ -182,7 +182,6 @@
         disable_hyprland_logo = false; # If true disables the random hyprland logo / anime girl background. :(
       };
 
-
       #####################
       ### INPUT CONFIG ###
       #####################
@@ -216,7 +215,6 @@
         sensitivity = -0.5;
       };
 
-      
       ####################
       ### KEYBINDINGS ###
       ####################
@@ -233,10 +231,9 @@
         "ALT_SHIFT, 3, exec, ${pkgs.grim}/bin/grim -o $(hyprctl -j monitors | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')"
         ''ALT_SHIFT, 4, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy --type image/png && ${pkgs.wl-clipboard}/bin/wl-paste > $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir PICTURES)/$(date +'%Y%m%d_%H%M%S_grim.png')''
         # recording
-        "ALT_SHIFT, 5, exec, ${pkgs.wf-recorder}/bin/wf-recorder -o $(hyprctl -j monitors | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') -c h264_vaapi -d /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')"
+        "ALT_SHIFT, 5, exec, ${pkgs.wf-recorder}/bin/wf-recorder --output $(hyprctl -j monitors | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') --codec h264_vaapi --device /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')"
+        ''ALT_SHIFT, 6, exec, ${pkgs.wf-recorder}/bin/wf-recorder --geometry "$(${pkgs.slurp}/bin/slurp)" - --codec h264_vaapi --device /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')''
         "CONTROL_ALT, Escape, exec, ${pkgs.killall}/bin/killall -s SIGINT wf-recorder"
-        # lockscreen
-        "CONTROL_ALT, q, exec, hyprlock"
 
         # Move focus
         "$mainMod, h, movefocus, l"
@@ -244,12 +241,6 @@
         "$mainMod, k, movefocus, u"
         "$mainMod, l, movefocus, r"
         # Change workspaces
-        "$mainMod, b, workspace, name:Browser"
-        "$mainMod, c, workspace, name:Chat"
-        "$mainMod, d, workspace, name:Database"
-        "$mainMod, e, workspace, name:Editor"
-        "$mainMod, f, workspace, name:FileManager"
-        "$mainMod, t, workspace, name:Terminal"
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
         "$mainMod, 3, workspace, 3"
@@ -264,12 +255,6 @@
         "$mainMod, p, workspace, m-1"
         "$mainMod, backslash, workspace, previous"
         # Move active window to a workspace
-        "$mainMod SHIFT, b, movetoworkspace, name:Browser"
-        "$mainMod SHIFT, c, movetoworkspace, name:Chat"
-        "$mainMod SHIFT, d, movetoworkspace, name:Database"
-        "$mainMod SHIFT, e, movetoworkspace, name:Editor"
-        "$mainMod SHIFT, f, movetoworkspace, name:FileManager"
-        "$mainMod SHIFT, t, movetoworkspace, name:Terminal"
         "$mainMod SHIFT, 1, movetoworkspace, 1"
         "$mainMod SHIFT, 2, movetoworkspace, 2"
         "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -296,6 +281,7 @@
 
         # Dispatchers
         "$mainMod ALT, f, fullscreen"
+        "$mainMod ALT, l, exec, hyprlock"
         "$mainMod ALT, m, togglefloating"
         "$mainMod ALT, p, pseudo"
         "$mainMod ALT, q, killactive"
@@ -341,12 +327,6 @@
         "float,class:^(com.saivert.pwvucontrol)$"
         "float,class:^(imv)$"
         "float,class:^(org.fcitx.)$"
-        "workspace name:Browser,class:^(zen)$"
-        "workspace name:Chat,class:^(Slack)$"
-        "workspace name:Database,class:^(DBeaver)$"
-        "workspace name:Editor,class:^(Cursor)$"
-        "workspace name:FileManager,class:^(spacedrive)$"
-        "workspace name:Terminal,class:^(dev.warp.Warp)$"
       ];
     };
 

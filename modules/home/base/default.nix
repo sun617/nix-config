@@ -36,7 +36,6 @@
     ./git.nix
     ./google-cloud-sdk.nix
     ./helix.nix
-    ./lsp-servers.nix
     ./nix-gc.nix
     ./ssh.nix
     ./yazi.nix
