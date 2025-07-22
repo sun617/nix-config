@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./zed-editor.nix
+  ];
+
   home.packages = with pkgs; [
     code-cursor
   ];
