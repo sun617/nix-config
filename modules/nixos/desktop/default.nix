@@ -5,13 +5,14 @@
     ../base
     ./fonts-and-icons.nix
     ./gnome-keyring.nix
+    ./rustdesk.nix
   ];
 
   programs = {
+    clash-verge.enable = true;
     hyprland.enable = true;
     hyprlock.enable = true;
-    # https://github.com/clash-verge-rev/clash-verge-rev/issues/3428
-    # clash-verge.enable = true;
+    localsend.enable = true;
   };
 
   # List services that you want to enable:
