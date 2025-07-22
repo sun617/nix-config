@@ -1,7 +1,6 @@
 {
   services.flatpak.packages = [
     "com.discordapp.Discord"
-    "com.skype.Client"
     "com.slack.Slack"
     "com.tencent.WeChat"
     "org.telegram.desktop"
