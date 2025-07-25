@@ -6,6 +6,7 @@
     ./fonts-and-icons.nix
     ./gnome-keyring.nix
     ./rustdesk.nix
+    ./tailscale.nix
   ];
 
   programs = {
