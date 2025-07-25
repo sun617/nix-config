@@ -3,6 +3,9 @@
 {
   home = {
     stateVersion = "23.11";
+    sessionPath = [
+      "$HOME/.local/bin"
+    ];
     sessionVariables = {
       EDITOR = "hx";
     };
