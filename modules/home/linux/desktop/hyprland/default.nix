@@ -234,6 +234,8 @@
         "ALT_SHIFT, 5, exec, ${pkgs.wf-recorder}/bin/wf-recorder --output $(hyprctl -j monitors | ${pkgs.jq}/bin/jq --raw-output '.[] | select(.focused) | .name') --codec h264_vaapi --device /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')"
         ''ALT_SHIFT, 6, exec, ${pkgs.wf-recorder}/bin/wf-recorder --geometry "$(${pkgs.slurp}/bin/slurp)" - --codec h264_vaapi --device /dev/dri/renderD128 -f $(${pkgs.xdg-user-dirs}/bin/xdg-user-dir VIDEOS)/$(date +'recording_%Y%m%d_%H%M%S.mp4')''
         "CONTROL_ALT, Escape, exec, ${pkgs.killall}/bin/killall -s SIGINT wf-recorder"
+        # play with mpv
+        ''ALT_SHIFT, p, exec, ${pkgs.yt-dlp}/bin/yt-dlp -o - "$(${pkgs.wl-clipboard}/bin/wl-paste)" | ${pkgs.mpv}/bin/mpv -''
 
         # Move focus
         "$mainMod, h, movefocus, l"
